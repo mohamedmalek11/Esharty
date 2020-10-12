@@ -11,6 +11,10 @@ export const Strings = {
   MyAcountAboutApp: 'عن التطبيق',
   MyAcountShareApp: 'شارك التطبيق',
   MyAcountScreenTitle: 'حسابي',
+  MyAcountPersonMail: 'mohamed@gmail.com',
+  MyAcountPersonName: 'محمد أحمد حسام الدين',
+  MyAcountUpdateButton: 'تعديل الحساب',
+  MyAcountCoursButton: 'الدورات'
 };
 
 export const placeholder = {
