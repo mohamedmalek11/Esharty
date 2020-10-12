@@ -14,7 +14,8 @@ export const Strings = {
   MyAcountPersonMail: 'mohamed@gmail.com',
   MyAcountPersonName: 'محمد أحمد حسام الدين',
   MyAcountUpdateButton: 'تعديل الحساب',
-  MyAcountCoursButton: 'الدورات'
+  MyAcountCoursButton: 'الدورات',
+  LogOut: 'تسجل الخروج',
 };
 
 export const placeholder = {
