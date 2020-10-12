@@ -10,7 +10,7 @@ export const Strings = {
   MyAcountContactUs: 'تواصل معنا',
   MyAcountAboutApp: 'عن التطبيق',
   MyAcountShareApp: 'شارك التطبيق',
-
+  MyAcountScreenTitle: 'حسابي',
 };
 
 export const placeholder = {
