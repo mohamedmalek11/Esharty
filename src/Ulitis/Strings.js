@@ -5,6 +5,9 @@ export const Strings = {
   DictionaryTitle: 'القواميس',
   GreetingTextHomePage: 'مرحبا بك في تطبيق اشاراتي',
   TopicsTitleHomePage: 'أخر المواضيع',
+  MyAcountGreetingText: 'مرحبا بك',
+  MyAcountLogInText: 'تسجيل دخول / تسجيل',
+  
 };
 
 export const placeholder = {

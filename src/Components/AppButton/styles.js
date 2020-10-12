@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from '../../Ulitis/Colors'
 
-const buttonColor = '#ED9F0B';
+const buttonColor = Colors.yellow;
 const textColor = 'white';
 
 const styles = StyleSheet.create({
@@ -9,7 +10,7 @@ const styles = StyleSheet.create({
     borderColor: buttonColor,
     borderRadius: 7,
     borderWidth: 1,
-    padding: 15,
+    padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
