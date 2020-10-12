@@ -21,6 +21,8 @@ export const Strings = {
   RestorPassButton: 'إستعادة كلمة المرور',
   DontHaveAccount: 'ليس لديك حساب ؟',
   RegisterNow: 'سجل الاَن',
+  HaveAccount: 'لديك حساب ؟',
+  LoginNow: 'سجل دخول الان',
 };
 
 export const placeholder = {
@@ -30,5 +32,6 @@ export const placeholder = {
   ContactUsSendButton: 'ارســال',
   UpdateAccountButton: 'حفظ',
   UpdateAccountPass: "كلمة السر",
-  LogInButton: 'تسجيل دخول'
+  LogInButton: 'تسجيل دخول',
+  RegisterButton: 'التسجيل',
 };
