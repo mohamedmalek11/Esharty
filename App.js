@@ -7,11 +7,11 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import {ContactUsScreen} from './src/Screens/ContactUsScreen';
+import {HomeScreen} from './src/Screens/HomeScreen';
 
 function App(props) {
   return (
-   <ContactUsScreen />
+   <HomeScreen />
   );
 }
 
