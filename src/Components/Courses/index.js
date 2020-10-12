@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {Strings} from '../../Ulitis/Strings'
 import {Card} from '../Card';
 import styles from './style';
 
-export function Courses(props) {
+export const Courses = (props) => {
   const {Courses} = props;
 
   return (
@@ -28,7 +29,7 @@ export function Courses(props) {
               <Text style={styles.MainText}>{Courses.Title}</Text>
             </View>
             <View style={styles.Details}>
-              <Text style={styles.Button}>تفاصيل الكورس</Text>
+              <Text style={styles.Button}>{Strings.CoursesDetialsButton}</Text>
               <Text style={styles.SeconeryText}>{Courses.Cost}</Text>
               <Text style={styles.SeconeryText}>{Courses.Courses}</Text>
             </View>
