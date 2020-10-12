@@ -24,6 +24,7 @@ export function Courses(props) {
             ]}
             style={styles.LinearGradient}>
             <View>
+            
               <Text style={styles.MainText}>{Courses.Title}</Text>
             </View>
             <View style={styles.Details}>
