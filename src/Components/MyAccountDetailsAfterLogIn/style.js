@@ -4,14 +4,15 @@ import {Colors} from '../../Ulitis/Colors';
 const styles = ScaledSheet.create({
   Card: {
     padding: '5@s',
-    marginVertical: '10@vs',
+    marginVertical: '5@vs',
     marginHorizontal: '20@s',
     backgroundColor: '#fff',
     borderRadius: '7@s',
   },
   Wrapper: {
     padding: '10@s',
-    marginBottom: '20@vs',
+    marginBottom: '10@vs',
+    marginTop: -10,
   },
   DetailsWrapper: {
     flexDirection: 'row',

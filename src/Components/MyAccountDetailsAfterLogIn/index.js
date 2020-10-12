@@ -84,7 +84,7 @@ export const MyAccountDetailsAfterLogIn = (props) => {
           />
         </View>
       </View>
-      <View style={{alignItems: 'center', marginBottom: 35, marginTop: 10}}>
+      <View style={{alignItems: 'center', marginBottom: 30,}}>
         <Text style={{color: Colors.red}}>{Strings.LogOut}</Text>
       </View>
     </Card>
