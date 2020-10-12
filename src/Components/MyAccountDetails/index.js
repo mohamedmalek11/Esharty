@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
+import {Strings} from '../../Ulitis/Strings';
 import {Card} from '../Card';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './style';
@@ -11,7 +12,7 @@ export const MyAccountDetails = (props) => {
         <View style={styles.DetailsWrapper}>
           <View style={{flexDirection: 'row'}}>
             <Icon name={'call-sharp'} style={styles.DetailsIcon} />
-            <Text style={styles.DetailsText}>تواصل معنا</Text>
+            <Text style={styles.DetailsText}>{Strings.MyAcountContactUs}</Text>
           </View>
           <View>
             <Icon name={'chevron-back-sharp'} style={{fontSize: 25}} />
@@ -31,7 +32,7 @@ export const MyAccountDetails = (props) => {
               name={'information-sharp'}
               style={{fontSize: 25, marginRight: 15}}
             />
-            <Text style={styles.DetailsText}>عن التطبيق</Text>
+            <Text style={styles.DetailsText}>{Strings.MyAcountAboutApp}</Text>
           </View>
           <View>
             <Icon name={'chevron-back-sharp'} style={{fontSize: 25}} />
@@ -48,7 +49,7 @@ export const MyAccountDetails = (props) => {
         <View style={styles.DetailsWrapper}>
           <View style={{flexDirection: 'row'}}>
             <Icon name={'share-social-sharp'} style={styles.DetailsIcon} />
-            <Text style={styles.DetailsText}>شارك التطبيق</Text>
+            <Text style={styles.DetailsText}>{Strings.MyAcountShareApp}</Text>
           </View>
           <View>
             <Icon name={'chevron-back-sharp'} style={{fontSize: 25}} />

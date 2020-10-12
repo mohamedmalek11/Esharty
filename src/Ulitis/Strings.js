@@ -7,7 +7,10 @@ export const Strings = {
   TopicsTitleHomePage: 'أخر المواضيع',
   MyAcountGreetingText: 'مرحبا بك',
   MyAcountLogInText: 'تسجيل دخول / تسجيل',
-  
+  MyAcountContactUs: 'تواصل معنا',
+  MyAcountAboutApp: 'عن التطبيق',
+  MyAcountShareApp: 'شارك التطبيق',
+
 };
 
 export const placeholder = {
