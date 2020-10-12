@@ -1,0 +1,6 @@
+module Pods_Esharaaty_EsharaatyTests {
+  umbrella header "Pods-Esharaaty-EsharaatyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
