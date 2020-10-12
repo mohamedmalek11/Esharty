@@ -12,7 +12,7 @@ const styles = ScaledSheet.create({
   Wrapper: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    marginVertical: '5@vs',
+    marginVertical: '10@vs',
   },
   Image: {
     width: '30@s',
