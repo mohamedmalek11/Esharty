@@ -3,6 +3,7 @@ import {View, Text, SafeAreaView, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Input} from '../../Components/Input';
 import {AppButton} from '../../Components/AppButton';
+import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
 export const ContactUsScreen = (props) => {
@@ -10,7 +11,7 @@ export const ContactUsScreen = (props) => {
     <SafeAreaView style={{}}>
       <View style={styles.Header}>
         <View style={styles.HeaderTitleWrapper}>
-          <Text style={styles.HeaderTitle}>تواصل معنا</Text>
+          <Text style={styles.HeaderTitle}>{Strings.ConactUsTitle}</Text>
         </View>
         <Icon name={'chevron-forward'} style={styles.BackIcon} />
       </View>
@@ -23,24 +24,27 @@ export const ContactUsScreen = (props) => {
       <View style={styles.InputWrapper}>
         <Input
           underlined
-          placeholder={'الأسم'}
+          placeholder={placeholder.ConactUsName}
           renderIcon={<Icon name={'person-outline'} style={styles.InputIcon} />}
           marginTop={50}
         />
         <Input
           underlined
-          placeholder={'البريد الإلكتروني'}
+          placeholder={placeholder.ConactUsMail}
           renderIcon={<Icon name={'mail-outline'} style={styles.InputIcon} />}
           marginTop={50}
         />
         <Input
           borderd
-          placeholder={'هنا نص الرسالة'}
+          placeholder={placeholder.ContactUsMessage}
           WrapperStyle={{marginTop: 30, padding: 20, paddingBottom: 150}}
           borderColor={'#E5E5E5'}
         />
         <View style={{marginTop: 30}}>
-          <AppButton title={'ارســال'} style={{colore: '#ED9F0B'}} />
+          <AppButton
+            title={placeholder.ContactUsSendButton}
+            style={{colore: '#ED9F0B'}}
+          />
         </View>
       </View>
     </SafeAreaView>
