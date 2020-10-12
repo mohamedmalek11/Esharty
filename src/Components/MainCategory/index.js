@@ -3,7 +3,7 @@ import {View, Text, Image, SafeAreaView} from 'react-native';
 import {Card} from '../Card';
 import styles from './style';
 
-export function MainCategory(props) {
+export const MainCategory = (props) => {
   const {MainCategory} = props;
 
   return (
@@ -30,4 +30,4 @@ export function MainCategory(props) {
       </View>
     </View>
   );
-}
+};

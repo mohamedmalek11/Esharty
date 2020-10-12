@@ -5,7 +5,7 @@ import {Input} from '../../Components/Input';
 import {AppButton} from '../../Components/AppButton';
 import styles from './style';
 
-export function ContactUsScreen(props) {
+export const ContactUsScreen = (props) => {
   return (
     <SafeAreaView style={{}}>
       <View style={styles.Header}>
@@ -39,10 +39,10 @@ export function ContactUsScreen(props) {
           WrapperStyle={{marginTop: 30, padding: 20, paddingBottom: 150}}
           borderColor={'#E5E5E5'}
         />
-        <View style = {{marginTop: 30}}>
-          <AppButton title={'ارســال'} style = {{colore: '#ED9F0B'}}/>
+        <View style={{marginTop: 30}}>
+          <AppButton title={'ارســال'} style={{colore: '#ED9F0B'}} />
         </View>
       </View>
     </SafeAreaView>
   );
-}
+};

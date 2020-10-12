@@ -3,8 +3,8 @@ import {View, Text, Image} from 'react-native';
 import {Card} from '../Card';
 import styles from './style';
 
-export function Topics(props) {
-  const {Topics} = props
+export const Topics = (props) => {
+  const {Topics} = props;
 
   return (
     <View>
@@ -12,9 +12,7 @@ export function Topics(props) {
         <View style={styles.Wrapper}>
           <View style={styles.TextWrapper}>
             <Text style={styles.MainText}>{Topics.title}</Text>
-            <Text style={styles.Text}>
-              {Topics.desciption}
-            </Text>
+            <Text style={styles.Text}>{Topics.desciption}</Text>
           </View>
           <View style={styles.ImageWrapper}>
             <Image
@@ -26,4 +24,4 @@ export function Topics(props) {
       </Card>
     </View>
   );
-}
+};

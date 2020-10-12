@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Card} from '../Card';
 import styles from './style';
 
-export function Dictionary(props) {
+export const Dictionary = (props) => {
   const {Dictionary} = props;
 
   return (
@@ -36,4 +36,4 @@ export function Dictionary(props) {
       </Card>
     </View>
   );
-}
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import {TextInput, View, StyleSheet, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-export function Input(props) {
+export const Input = (props) => {
   const {
     style,
     placeholder,
@@ -53,7 +53,7 @@ export function Input(props) {
       )}
     </View>
   );
-}
+};
 const styles = StyleSheet.create({
   IconWrapper: {},
 });

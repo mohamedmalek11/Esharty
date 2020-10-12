@@ -13,16 +13,15 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {Topics} from '../../Components/Topics';
 import styles from './style';
 
-export function HomeScreen(props) {
-  function renderCategory({item}) {
+export const HomeScreen = (props) => {
+  const renderCategory = ({item}) => {
     return <MainCategory MainCategory={item} />;
-  }
-  function renderTopics({item}) {
+  };
+  const renderTopics = ({item}) => {
     return <Topics Topics={item} />;
-  }
+  };
   return (
-
-      <SafeAreaView>
+    <SafeAreaView>
       <ScrollView>
         <View style={styles.header}>
           <View style={styles.iconWrapper}>
@@ -42,13 +41,12 @@ export function HomeScreen(props) {
           horizontal={true}
           style={styles.FlatList}
         />
-        
+
         <View style={styles.topicsTextWrapper}>
           <Text style={styles.topicsText}>أخر المواضيع</Text>
         </View>
         <FlatList data={dummyTopics} renderItem={renderTopics} />
-        </ScrollView>
-      </SafeAreaView>
-    
+      </ScrollView>
+    </SafeAreaView>
   );
-}
+};
