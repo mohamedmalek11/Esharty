@@ -16,7 +16,11 @@ export const Strings = {
   MyAcountUpdateButton: 'تعديل الحساب',
   MyAcountCoursButton: 'الدورات',
   LogOut: 'تسجل الخروج',
-  UpdateAccountTitle: 'إعدادات الحساب'
+  UpdateAccountTitle: 'إعدادات الحساب',
+  LogInTitle: 'تسجيل الدخول',
+  RestorPassButton: 'إستعادة كلمة المرور',
+  DontHaveAccount: 'ليس لديك حساب ؟',
+  RegisterNow: 'سجل الاَن',
 };
 
 export const placeholder = {
@@ -25,5 +29,6 @@ export const placeholder = {
   ContactUsMessage: 'هنا نص الرسالة',
   ContactUsSendButton: 'ارســال',
   UpdateAccountButton: 'حفظ',
-  UpdateAccountPass: "كلمة السر"
+  UpdateAccountPass: "كلمة السر",
+  LogInButton: 'تسجيل دخول'
 };
