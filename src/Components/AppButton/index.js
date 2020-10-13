@@ -10,6 +10,7 @@ export class AppButton extends React.Component {
       titleStyle,
       isLoading,
       disabled,
+      onPress,
       ...rest
     } = this.props;
 
@@ -25,7 +26,7 @@ export class AppButton extends React.Component {
         {isLoading ? (
           <ActivityIndicator />
         ) : (
-          <Text style={[styles.title, titleStyle]}>{title}</Text>
+          <Text style={[styles.title, titleStyle]} onPress = {onPress}>{title}</Text>
         )}
       </View>
     );

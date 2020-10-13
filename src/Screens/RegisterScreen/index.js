@@ -46,6 +46,7 @@ export const RegisterScreen = (props) => {
             title={placeholder.RegisterButton}
             WrapperStyle={{colore: Colors.yellow, paddingVertical: 10}}
             titleStyle={{fontSize: 17, paddingVertical: 7}}
+            onPress = {() => {alert('reristerd')}}
           />
         </View>
         <View
