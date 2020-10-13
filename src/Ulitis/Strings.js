@@ -24,6 +24,7 @@ export const Strings = {
   HaveAccount: 'لديك حساب ؟',
   LoginNow: 'سجل دخول الان',
   RestorePassTitle: 'استعادة كلمة المرور',
+  InterConfirmCode: 'ادخل الكود المرسل لك',
 };
 
 export const placeholder = {
@@ -36,4 +37,6 @@ export const placeholder = {
   LogInButton: 'تسجيل دخول',
   RegisterButton: 'التسجيل',
   RestorePassButton: 'استعادة كلمة المرور',
+  RestoreConfirmButton: 'التالي',
+  ConfirmCode: '_______     _______     _______     _______     _______'
 };

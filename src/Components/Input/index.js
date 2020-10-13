@@ -15,6 +15,7 @@ export const Input = (props) => {
     underlinedColore,
     WrapperStyle,
     underlinedHeight,
+    justifyContent,
     marginTop,
     ...rest
   } = props;
@@ -33,7 +34,7 @@ export const Input = (props) => {
       <View
         style={{
           flexDirection: 'row',
-          justifyContent: 'flex-start',
+          justifyContent: justifyContent || 'flex-start',
           direction: 'rtl',
           marginTop: marginTop,
           marginBottom: 10,
