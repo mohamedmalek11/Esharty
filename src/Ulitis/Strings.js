@@ -38,5 +38,8 @@ export const placeholder = {
   RegisterButton: 'التسجيل',
   RestorePassButton: 'استعادة كلمة المرور',
   RestoreConfirmButton: 'التالي',
-  ConfirmCode: '_______     _______     _______     _______     _______'
+  ConfirmCode: '_______     _______     _______     _______     _______',
+  NewPassword: 'كلمة السر',
+  NewPasswordConfirm: 'تأكيد كلمة المرور',
+  SavePassword: 'حفظ كلمة المرور',
 };
