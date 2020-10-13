@@ -7,12 +7,10 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import {HomeScreen} from './src/Screens/HomeScreen';
+import {CourseDetailsScreen} from './src/Screens/CourseDetailsScreen';
 
 function App(props) {
-  return (
-   <HomeScreen />
-  );
+  return <CourseDetailsScreen />;
 }
 
 export default App;

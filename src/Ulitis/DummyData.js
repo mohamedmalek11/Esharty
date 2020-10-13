@@ -83,26 +83,25 @@ export const dummyDictionary = [
   dummyDictionary3,
 ];
 
-
 export const dummyCourses1 = {
   Title: 'دورة الأشارات المستوى الأول',
   Cost: '200 ريال',
-  Courses: '9 دروس'
+  Courses: '9 دروس',
 };
 export const dummyCourses2 = {
   Title: 'دورة الأشارات المستوى الأول',
   Cost: '500 ريال',
-  Courses: '5 دروس'
+  Courses: '5 دروس',
 };
 export const dummyCourses3 = {
   Title: 'دورة الأشارات المستوى الأول',
   Cost: '300 ريال',
-  Courses: '2 دروس'
+  Courses: '2 دروس',
 };
 export const dummyCourses4 = {
   Title: 'دورة الأشارات المستوى الأول',
   Cost: '100 ريال',
-  Courses: '9 دروس'
+  Courses: '9 دروس',
 };
 
 export const dummyCourses = [
@@ -111,3 +110,32 @@ export const dummyCourses = [
   dummyCourses3,
   dummyCourses4,
 ];
+
+export const DummyCourseDetails = {
+  Title: 'دورات لغة الأشارة',
+  Cost: 'التكلفة',
+  Price: '200',
+  Description:
+    'وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة',
+
+};
+
+export const Lesson1 = {
+  Title: 'الدرس الأول'
+};
+const Lesson2 = {
+  Title: 'الدرس الثاني'
+};
+const Lesson3 = {
+  Title: 'الدرس الثالث'
+};
+const Lesson4 = {
+  Title: 'الدرس الرابع'
+};
+
+export const DummyLesson = [
+  Lesson1,
+  Lesson2,
+  Lesson3,
+  Lesson4
+]

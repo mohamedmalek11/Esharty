@@ -25,6 +25,8 @@ export const Strings = {
   LoginNow: 'سجل دخول الان',
   RestorePassTitle: 'استعادة كلمة المرور',
   InterConfirmCode: 'ادخل الكود المرسل لك',
+  CourseListTitle: 'قائمة الدروس',
+  CoursDetailsTitle: 'دورة الاشارات',
 };
 
 export const placeholder = {
@@ -42,4 +44,5 @@ export const placeholder = {
   NewPassword: 'كلمة السر',
   NewPasswordConfirm: 'تأكيد كلمة المرور',
   SavePassword: 'حفظ كلمة المرور',
+  LessonTitle : 'أشترك الان',
 };
