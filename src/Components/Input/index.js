@@ -36,7 +36,7 @@ export const Input = (props) => {
           justifyContent: 'flex-start',
           direction: 'rtl',
           marginTop: marginTop,
-          marginBottom: 5,
+          marginBottom: 10,
         }}>
         <View style={styles.IconWrapper}>{renderIcon}</View>
         <TextInput placeholder={placeholder} {...rest} style={{}} />
