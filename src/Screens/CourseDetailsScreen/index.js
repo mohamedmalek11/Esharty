@@ -24,13 +24,14 @@ export const CourseDetailsScreen = () => {
           {Strings.CoursDetailsTitle}
         </Text>
         <CourseDetails />
+        </ScrollView>
         <View style={{marginHorizontal: 20, marginTop: 5}}>
           <AppButton
             title={placeholder.LessonTitle}
             titleStyle={{paddingBottom: 10, fontSize: 17}}
           />
         </View>
-      </ScrollView>
+      
     </SafeAreaView>
   );
 };
