@@ -29,7 +29,9 @@ export const Strings = {
   CoursDetailsTitle: 'دورة الاشارات',
   Warning: 'تحذير',
   CompleteCourceText: 'يجب عليك إتمام كورس دورة الإشارات اولا',
-  
+  MyCoursesTitle: 'كورساتي',
+  CheckCourse: 'تصفح الكورس',
+  FinishCourse: 'اكملت مشاهدة الدورة بنجاح',
 };
 
 export const placeholder = {
