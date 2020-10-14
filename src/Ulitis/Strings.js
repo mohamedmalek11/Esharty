@@ -27,6 +27,9 @@ export const Strings = {
   InterConfirmCode: 'ادخل الكود المرسل لك',
   CourseListTitle: 'قائمة الدروس',
   CoursDetailsTitle: 'دورة الاشارات',
+  Warning: 'تحذير',
+  CompleteCourceText: 'يجب عليك إتمام كورس دورة الإشارات اولا',
+  
 };
 
 export const placeholder = {
@@ -44,5 +47,6 @@ export const placeholder = {
   NewPassword: 'كلمة السر',
   NewPasswordConfirm: 'تأكيد كلمة المرور',
   SavePassword: 'حفظ كلمة المرور',
-  LessonTitle : 'أشترك الان',
+  LessonTitle: 'أشترك الان',
+  Close: 'إغلاق',
 };
