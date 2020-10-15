@@ -117,25 +117,41 @@ export const DummyCourseDetails = {
   Price: '200',
   Description:
     'وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة وصف عن الدورة',
-
 };
 
 export const Lesson1 = {
-  Title: 'الدرس الأول'
+  Title: 'الدرس الأول',
 };
 const Lesson2 = {
-  Title: 'الدرس الثاني'
+  Title: 'الدرس الثاني',
 };
 const Lesson3 = {
-  Title: 'الدرس الثالث'
+  Title: 'الدرس الثالث',
 };
 const Lesson4 = {
-  Title: 'الدرس الرابع'
+  Title: 'الدرس الرابع',
 };
 
-export const DummyLesson = [
-  Lesson1,
-  Lesson2,
-  Lesson3,
-  Lesson4
-]
+export const DummyLesson = [Lesson1, Lesson2, Lesson3, Lesson4];
+
+export const LessonCard1 = {
+  Title: 'الدرس الأول',
+  IsFinish: 'true',
+};
+const LessonCard2 = {
+  Title: 'الدرس الثاني',
+  IsFinish: 'true',
+};
+const LessonCard3 = {
+  Title: 'الدرس الثالث',
+};
+const LessonCard4 = {
+  Title: 'الدرس الرابع',
+};
+
+export const DummyLessonCard = [
+  LessonCard1,
+  LessonCard2,
+  LessonCard3,
+  LessonCard4,
+];
