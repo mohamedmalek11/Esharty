@@ -33,7 +33,8 @@ const styles = ScaledSheet.create({
     lineHeight: 30,
     fontSize: 16,
     textAlign: 'left',
-    direction: 'rtl'
+    direction: 'rtl',
+    
   },
 });
 
