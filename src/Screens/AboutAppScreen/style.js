@@ -32,6 +32,8 @@ const styles = ScaledSheet.create({
   AboutAppText: {
     lineHeight: 30,
     fontSize: 16,
+    textAlign: 'left',
+    direction: 'rtl'
   },
 });
 
