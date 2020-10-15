@@ -38,6 +38,7 @@ export const Strings = {
   LogInWarning: 'يجب عليك تسجيل الدخول اولا',
   VideoLenth: 'مدة الدرس',
   VideoLenthTime: '10:23',
+  FirstLesson: 'الدرس الثالث',
 };
 
 export const placeholder = {
