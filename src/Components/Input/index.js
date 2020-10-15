@@ -15,6 +15,8 @@ export const Input = (props) => {
     underlinedColore,
     WrapperStyle,
     underlinedHeight,
+    onChangeText,
+    TextInputStyle,
     justifyContent,
     marginTop,
     ...rest
@@ -40,7 +42,7 @@ export const Input = (props) => {
           marginBottom: 10,
         }}>
         <View style={styles.IconWrapper}>{renderIcon}</View>
-        <TextInput placeholder={placeholder} {...rest} style={{}} />
+        <TextInput placeholder={placeholder} {...rest} style={TextInputStyle} onChangeText ={onChangeText}/>
       </View>
 
       {underlined && (
