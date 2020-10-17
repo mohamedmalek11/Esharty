@@ -8,7 +8,13 @@ import {Card} from '../../Components/Card';
 import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
+const ValidateMail = (MailText) => {
+  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(MailText);
+};
+
 export const RestorePassScreen = (props) => {
+  const [mailVal, ChangedMailVal] = React.useState('');
+
   return (
     <SafeAreaView>
       <View style={styles.Header}>
@@ -23,6 +29,7 @@ export const RestorePassScreen = (props) => {
           placeholder={placeholder.ConactUsMail}
           renderIcon={<Icon name={'mail-outline'} style={styles.InputIcon} />}
           marginTop={50}
+          onChangeText={ChangedMailVal}
         />
         <Card style={{marginTop: 45}}>
           <AppButton
@@ -30,7 +37,14 @@ export const RestorePassScreen = (props) => {
             WrapperStyle={{colore: Colors.yellow, paddingVertical: 10}}
             titleStyle={{fontSize: 17, paddingVertical: 7}}
             onPress={() => {
-              alert('reristerd');
+              if (!ValidateMail(mailVal)) {
+                alert('wrong ');
+                return;
+              }
+              {
+                alert('you enterd ' + mailVal);
+                return;
+              }
             }}
           />
         </Card>
