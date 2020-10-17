@@ -55,7 +55,10 @@ export const UpdateAccountScreen = (props) => {
           placeholder={placeholder.UpdateAccountPass}
           renderIcon={<Icon name={'key-outline'} style={styles.InputIcon} />}
           marginTop={50}
+          autoCorrect={false}
+          autoCompleteType = {'password'}
           onChangeText={ChangedPasslVal}
+          secureTextEntry = {true}
         />
 
         <View style={{justifyContent: 'center', flex: 1, marginBottom: 50}}>

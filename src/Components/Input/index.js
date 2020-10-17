@@ -12,10 +12,13 @@ export const Input = (props) => {
     renderIcon,
     borderRadius,
     borderColor,
+    secureTextEntry,
     underlinedColore,
     WrapperStyle,
     underlinedHeight,
     onChangeText,
+    autoCorrect,
+    autoCompleteType,
     TextInputStyle,
     justifyContent,
     marginTop,
@@ -42,7 +45,15 @@ export const Input = (props) => {
           marginBottom: 10,
         }}>
         <View style={styles.IconWrapper}>{renderIcon}</View>
-        <TextInput placeholder={placeholder} {...rest} style={TextInputStyle} onChangeText ={onChangeText}/>
+        <TextInput
+          placeholder={placeholder}
+          {...rest}
+          style={TextInputStyle}
+          onChangeText={onChangeText}
+          autoCorrect={autoCorrect}
+          autoCompleteType={autoCompleteType}
+          secureTextEntry={secureTextEntry}
+        />
       </View>
 
       {underlined && (
