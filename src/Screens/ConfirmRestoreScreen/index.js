@@ -8,7 +8,14 @@ import {Card} from '../../Components/Card';
 import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
+const ValidateCode = (CodeText) => {
+  return /^[0-9]{5}$/.test(
+    CodeText,
+  );
+};
 export const ConfirmRestoreScreen = (props) => {
+  const [CodeVal, ChangedCodeVal] = React.useState('');
+
   return (
     <SafeAreaView>
       <View style={styles.Header}>
@@ -34,6 +41,7 @@ export const ConfirmRestoreScreen = (props) => {
           placeholder={placeholder.ConfirmCode}
           keyboardType="numeric"
           marginTop={50}
+          onChangeText={ChangedCodeVal}
         />
         <Card style={{marginTop: 45}}>
           <AppButton
@@ -41,7 +49,16 @@ export const ConfirmRestoreScreen = (props) => {
             WrapperStyle={{colore: Colors.yellow, paddingVertical: 10}}
             titleStyle={{fontSize: 17, paddingVertical: 7}}
             onPress={() => {
-              alert('reristerd');
+              if (
+                !ValidateCode(CodeVal)
+              ) {
+                alert('wrong ');
+                return;
+              }
+              {
+                alert('you enterd ' + CodeVal);
+                return;
+              }
             }}
           />
         </Card>
