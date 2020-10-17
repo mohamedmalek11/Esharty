@@ -7,7 +7,17 @@ import {AppButton} from '../../Components/AppButton';
 import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
+const ValidateMail = (MailText) => {
+  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(MailText);
+};
+const ValidatePass = (PassText) => {
+  return /^[a-zA-Z0-9.-]{6,}$/.test(PassText);
+};
+
 export const LogInScreen = (props) => {
+  const [mailVal, ChangedMailVal] = React.useState('');
+  const [PassVal, ChangedPasslVal] = React.useState('');
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.Header}>
@@ -28,18 +38,33 @@ export const LogInScreen = (props) => {
           placeholder={placeholder.ConactUsMail}
           renderIcon={<Icon name={'mail-outline'} style={styles.InputIcon} />}
           marginTop={50}
+          onChangeText={ChangedMailVal}
         />
         <Input
           underlined
           placeholder={placeholder.UpdateAccountPass}
           renderIcon={<Icon name={'key-outline'} style={styles.InputIcon} />}
           marginTop={50}
+          autoCorrect={false}
+          autoCompleteType={'password'}
+          onChangeText={ChangedPasslVal}
+          secureTextEntry={true}
         />
         <View style={{marginTop: 45}}>
           <AppButton
             title={placeholder.LogInButton}
             WrapperStyle={{colore: Colors.yellow, paddingVertical: 10}}
             titleStyle={{fontSize: 17, paddingVertical: 7}}
+            onPress={() => {
+              if (!ValidatePass(PassVal) || !ValidateMail(mailVal)) {
+                alert('wrong ');
+                return;
+              }
+              {
+                alert('you enterd ' + mailVal + PassVal);
+                return;
+              }
+            }}
           />
         </View>
         <View
