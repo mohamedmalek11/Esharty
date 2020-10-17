@@ -7,10 +7,10 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import {LogInScreen} from './src/Screens/LogInScreen';
+import {NewPasswordScreen} from './src/Screens/NewPasswordScreen';
 
 function App(props) {
-  return <LogInScreen />;
+  return <NewPasswordScreen />;
 }
 
 export default App;

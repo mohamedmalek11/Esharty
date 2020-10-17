@@ -9,6 +9,14 @@ import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
 export const NewPasswordScreen = (props) => {
+  const [PassVal, ChangedPasslVal] = React.useState('');
+  const [ConfirmPassVal, ChangedConfirmPasslVal] = React.useState('');
+  const ValidatePass = (PassText) => {
+    return /^[a-zA-Z0-9.-]{6,}$/.test(PassText);
+  };
+  const ValidateConfirmPass = (ConfirmPassText) => {
+    return /^[a-zA-Z0-9.-]{6,}$/.test(ConfirmPassText);
+  };
   return (
     <SafeAreaView>
       <View style={styles.Header}>
@@ -23,12 +31,20 @@ export const NewPasswordScreen = (props) => {
           placeholder={placeholder.NewPassword}
           renderIcon={<Icon name={'key-outline'} style={styles.InputIcon} />}
           marginTop={50}
+          autoCorrect={false}
+          autoCompleteType={'password'}
+          onChangeText={ChangedPasslVal}
+          secureTextEntry={false}
         />
         <Input
           underlined
           placeholder={placeholder.NewPasswordConfirm}
           renderIcon={<Icon name={'key-outline'} style={styles.InputIcon} />}
           marginTop={50}
+          autoCorrect={false}
+          autoCompleteType={'password'}
+          onChangeText={ChangedConfirmPasslVal}
+          secureTextEntry={false}
         />
         <Card style={{marginTop: 45}}>
           <AppButton
@@ -36,7 +52,18 @@ export const NewPasswordScreen = (props) => {
             WrapperStyle={{colore: Colors.yellow, paddingVertical: 10}}
             titleStyle={{fontSize: 17, paddingVertical: 7}}
             onPress={() => {
-              alert('reristerd');
+              if (
+                !ValidatePass(PassVal) ||
+                !ValidateConfirmPass(ConfirmPassVal) ||
+                PassVal != ConfirmPassVal
+              ) {
+                alert('wrong ');
+                return;
+              }
+              {
+                alert('you enterd ' + PassVal);
+                return;
+              }
             }}
           />
         </Card>
