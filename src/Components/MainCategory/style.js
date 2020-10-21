@@ -1,48 +1,68 @@
 import {ScaledSheet} from 'react-native-size-matters';
-import {Dimensions} from 'react-native';
-
-const {width} = Dimensions.get('window');
-
-const ImageWidth = width / 1.3;
-const ImageHight = ImageWidth * 1.4;
+import {Platform} from 'react-native';
 
 const styles = ScaledSheet.create({
-  Container: {
-  },
+  
+  Card: Platform.select({
+    android: {
+      elevation: 2,
+      backgroundColor: '#fff',
+      borderRadius: 7,
+      padding: 5,
+      margin: 5,
+      width: 240,
+      height: 313,
+    },
+    ios: {
+      shadowColor: '#000',
+      shadowOpacity: 0.2,
+      shadowRadius: 5,
+      shadowOffset: {width: 0, height: 5},
+      padding: 5,
+      margin: 5,
+      backgroundColor: null,
+      width: 240,
+      height: 350,
+      
+    },
+  }),
   Image: {
-    width: ImageWidth,
-    height: ImageHight,
+    width: 270,
+    height: 350,
+    alignSelf: 'center',
+    top: -15,
   },
-  Image2: {
-    width: ImageWidth,
-    height: ImageHight,
-    position: 'absolute',
-    top: -1,
-    left: 5,
-    right: 0,
-    bottom: 0,
-  },
-  wrapper: {
-    alignItems: 'flex-start',
-  },
+
   TextWrapper: {
     position: 'absolute',
     alignItems: 'flex-start',
-    top: 290,
-    left: 25,
+    direction: 'rtl',
+    top: 220,
+    left: 10,
   },
   MainText: {
     color: '#fff',
     fontSize: '20@s',
-    padding: '10@s',
-    textAlign: 'right'
+    paddingHorizontal: '10@s',
+    paddingBottom: '5@s',
+    textAlign: 'right',
   },
   SeconeryText: {
     color: '#fff',
     fontSize: '15@s',
-    paddingLeft: '10@s',
-    paddingRight: '10@s',
-    textAlign: 'right'
+    paddingHorizontal: '10@s',
+    textAlign: 'right',
+  },
+  LinearGradient: {
+    borderRadius: 7,
+    padding: 9,
+    alignItems: 'center',
+    width: 226,
+    height: 305,
+    direction: 'rtl',
+    paddingTop: 10,
+    position: 'absolute',
+    left: 7,
   },
 });
 
