@@ -7,7 +7,7 @@ const styles = ScaledSheet.create({
       elevation: 10,
       backgroundColor: '#fff',
       borderRadius: 5,
-      padding: 4,
+      padding: 5,
     },
     ios: {
       shadowColor: '#000',
