@@ -7,12 +7,45 @@ import {
   SafeAreaView,
   FlatList,
 } from 'react-native';
-import {MainCategory} from '../../Components/MainCategory';
 import {dummyCategories, dummyTopics} from '../../Ulitis/DummyData';
+import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Topics} from '../../Components/Topics';
 import {Strings} from '../../Ulitis/Strings';
 import styles from './style';
+
+const MainCategory = (props) => {
+  const {MainCategory} = props;
+
+  return (
+    <View style={{paddingTop: 15}}>
+      <View style={styles.Card}>
+        <Image
+          source={require('../../Assets/Images/MainCategoryImage.png')}
+          style={styles.Image}
+        />
+        <LinearGradient
+          colors={[
+            'rgba(255,255,255,0.0)',
+            'rgba(0,0,0,0.1)',
+            'rgba(0,0,0,0.3)',
+          ]}
+          style={styles.LinearGradient}></LinearGradient>
+
+        <View style={styles.TextWrapper}>
+          <View>
+            <Text style={styles.MainText}>{MainCategory.title}</Text>
+          </View>
+          <View>
+            <Text style={styles.SeconeryText}>{MainCategory.secTitle}</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+
 
 export const HomeScreen = (props) => {
   const renderCategory = ({item}) => {
@@ -34,7 +67,9 @@ export const HomeScreen = (props) => {
           />
         </View>
         <View style={styles.greetingTextWrapper}>
-          <Text style={styles.greetingText}>{Strings.GreetingTextHomePage}</Text>
+          <Text style={styles.greetingText}>
+            {Strings.GreetingTextHomePage}
+          </Text>
         </View>
         <FlatList
           data={dummyCategories}
