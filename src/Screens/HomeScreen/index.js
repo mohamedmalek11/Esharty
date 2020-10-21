@@ -10,7 +10,7 @@ import {
 import {dummyCategories, dummyTopics} from '../../Ulitis/DummyData';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Topics} from '../../Components/Topics';
+import {Card} from '../../Components/Card';
 import {Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
@@ -34,10 +34,12 @@ const MainCategory = (props) => {
 
         <View style={styles.TextWrapper}>
           <View>
-            <Text style={styles.MainText}>{MainCategory.title}</Text>
+            <Text style={styles.MainCategoryText}>{MainCategory.title}</Text>
           </View>
           <View>
-            <Text style={styles.SeconeryText}>{MainCategory.secTitle}</Text>
+            <Text style={styles.CategorySeconeryText}>
+              {MainCategory.secTitle}
+            </Text>
           </View>
         </View>
       </View>
@@ -45,7 +47,37 @@ const MainCategory = (props) => {
   );
 };
 
+const Topics = (props) => {
+  const {Topics} = props;
 
+  return (
+    <View>
+      <Card style={styles.TopicsContainer}>
+        <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+          <View style={styles.TopicsTextWrapper}>
+            <Text
+              style={{
+                fontSize: 17,
+                marginBottom: 10,
+                textAlign: 'right',
+              }}>
+              {Topics.title}
+            </Text>
+            <Text style={{color: '#676767', textAlign: 'right'}}>
+              {Topics.desciption}
+            </Text>
+          </View>
+          <View>
+            <Image
+              source={require('../../Assets/Images/TopicsImage.png')}
+              style={{width: 100, height: 100}}
+            />
+          </View>
+        </View>
+      </Card>
+    </View>
+  );
+};
 
 export const HomeScreen = (props) => {
   const renderCategory = ({item}) => {
