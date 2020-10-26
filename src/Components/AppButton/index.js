@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, ActivityIndicator, View} from 'react-native';
-import styles from './styles';
+import {Colors} from '../../Ulitis/Colors';
 
 export class AppButton extends React.Component {
   render() {
@@ -17,16 +17,28 @@ export class AppButton extends React.Component {
     return (
       <View
         {...rest}
-        disabled={disabled || isLoading}
         style={[
-          styles.wrapper,
+          {
+            backgroundColor: Colors.yellow,
+            borderColor: Colors.yellow,
+            borderRadius: 7,
+            borderWidth: 1,
+            padding: 10,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           WrapperStyle,
-          disabled ? styles.disabled : null,
+          disabled ? {opacity: 0.4} : null,
+          isLoading ? {paddingVertical: 17} : null,
         ]}>
         {isLoading ? (
           <ActivityIndicator />
         ) : (
-          <Text style={[styles.title, titleStyle]} onPress = {onPress}>{title}</Text>
+          <Text
+            style={[{color: '#fff', fontWeight: 'bold'}, titleStyle]}
+            onPress={disabled || isLoading ? null : onPress}>
+            {title}
+          </Text>
         )}
       </View>
     );
