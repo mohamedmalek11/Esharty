@@ -8,21 +8,21 @@ import styles from './style';
 export const MyAcountLogIn = (props) => {
   return (
     <View>
-      <Card style={styles.Container}>
-        <View style={styles.Wrapper}>
-          <View style={styles.TextWrapper}>
-            <Text style={styles.GreetingText}>
+      <Card style={styles.MyAcountLogInContainer}>
+        <View style={styles.MyAcountLogInWrapper}>
+          <View style={styles.MyAcountLogInTextWrapper}>
+            <Text style={styles.MyAcountLogInGreetingText}>
               {Strings.MyAcountGreetingText}
             </Text>
             <AppButton
               title={Strings.MyAcountLogInText}
-              WrapperStyle={styles.LogInText}
+              WrapperStyle={styles.MyAcountLogInLogInText}
             />
           </View>
-          <View style={styles.ImageWrapper}>
+          <View style={styles.MyAcountLogInImageWrapper}>
             <Image
               source={require('../../Assets/Images/User.png')}
-              style={styles.Image}
+              style={styles.MyAcountLogInImage}
             />
           </View>
         </View>
