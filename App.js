@@ -10,7 +10,7 @@ import {
 import {MyAccountScreen} from './src/Screens/MyAccountScreen';
 
 function App(props) {
-  return <MyAccountScreen IsLogedIn = {true} />;
+  return <MyAccountScreen IsLogedIn={true} />;
 }
 
 export default App;

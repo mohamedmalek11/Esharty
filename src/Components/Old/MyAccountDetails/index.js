@@ -7,11 +7,11 @@ import {Colors} from '../../Ulitis/Colors';
 import styles from './style';
 
 export const MyAccountDetails = (props) => {
-  const {IsLogedIn} = props
+  const {IsLogedIn} = props;
 
   return (
-    <Card style={styles.Card}>
-      <View style={styles.Wrapper}>
+    <Card style={styles.DetailsCard}>
+      <View style={styles.AccountDetailsWrapper}>
         <View style={styles.DetailsWrapper}>
           <View style={{flexDirection: 'row'}}>
             <Icon name={'call-sharp'} style={styles.DetailsIcon} />
@@ -66,7 +66,7 @@ export const MyAccountDetails = (props) => {
           }}
         />
       </View>
-      <View style={styles.IconsWrapper}>
+      <View style={styles.DetailsIconsWrapper}>
         <View style={styles.ShareIconWrapperTwitter}>
           <Image
             source={require('../../Assets/Images/twitter.png')}
@@ -86,9 +86,13 @@ export const MyAccountDetails = (props) => {
           />
         </View>
       </View>
-      {IsLogedIn && <View style={{alignItems: 'center', marginBottom: 30}}>
-        <Text style={{color: Colors.red}}>{Strings.LogOut}</Text>
-      </View>}
+      {IsLogedIn && (
+        <View style={{alignItems: 'center', marginBottom: 30}}>
+          <Text style={{color: Colors.red}} onPress={() => {}}>
+            {Strings.LogOut}
+          </Text>
+        </View>
+      )}
     </Card>
   );
 };

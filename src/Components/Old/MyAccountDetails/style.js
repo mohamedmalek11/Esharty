@@ -2,14 +2,14 @@ import {ScaledSheet} from 'react-native-size-matters';
 import {Colors} from '../../Ulitis/Colors';
 
 const styles = ScaledSheet.create({
-  Card: {
+  DetailsCard: {
     padding: '5@s',
     marginVertical: '10@vs',
     marginHorizontal: '20@s',
     backgroundColor: '#fff',
     borderRadius: '7@s',
   },
-  Wrapper: {
+  AccountDetailsWrapper: {
     padding: '10@s',
     marginBottom: '20@vs',
   },
@@ -28,7 +28,7 @@ const styles = ScaledSheet.create({
   DetailsText: {
     fontSize: '13@s',
   },
-  IconsWrapper: {
+  DetailsIconsWrapper: {
     flexDirection: 'row',
     justifyContent: 'center',
     marginVertical: '20@vs',
