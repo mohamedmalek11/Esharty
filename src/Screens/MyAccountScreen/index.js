@@ -39,7 +39,7 @@ export const MyAccountScreen = (props) => {
         <Text style={styles.Title}>{Strings.MyAcountScreenTitle}</Text>
       </View>
       <MyAcountLogIn />
-      <MyAccountDetails />
+      <MyAccountDetails IsLogedIn = {false} />
     </SafeAreaView>
   );
 };

@@ -3,9 +3,12 @@ import {View, Text, Image} from 'react-native';
 import {Strings} from '../../Ulitis/Strings';
 import {Card} from '../Card';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {Colors} from '../../Ulitis/Colors';
 import styles from './style';
 
 export const MyAccountDetails = (props) => {
+  const {IsLogedIn} = props
+
   return (
     <Card style={styles.Card}>
       <View style={styles.Wrapper}>
@@ -83,6 +86,9 @@ export const MyAccountDetails = (props) => {
           />
         </View>
       </View>
+      {IsLogedIn && <View style={{alignItems: 'center', marginBottom: 30}}>
+        <Text style={{color: Colors.red}}>{Strings.LogOut}</Text>
+      </View>}
     </Card>
   );
 };
