@@ -7,10 +7,10 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-import {NewPasswordScreen} from './src/Screens/NewPasswordScreen';
+import {MyAccountScreen} from './src/Screens/MyAccountScreen';
 
 function App(props) {
-  return <NewPasswordScreen />;
+  return <MyAccountScreen IsLogedIn = {true} />;
 }
 
 export default App;

@@ -3,6 +3,8 @@ import {View, Text, SafeAreaView, Image} from 'react-native';
 import {Strings} from '../../Ulitis/Strings';
 import {AppButton} from '../../Components/AppButton';
 import {Card} from '../../Components/Card';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {Colors} from '../../Ulitis/Colors';
 import {MyAccountDetails} from '../../Components/MyAccountDetails';
 import styles from './style';
 
@@ -32,14 +34,60 @@ const MyAcountLogIn = (props) => {
   );
 };
 
+const MyAccountAfterLogIn = (props) => {
+  return (
+    <View>
+      <Card style={styles.MyAccountAfterLogInContainer}>
+        <View style={styles.MyAccountAfterLogInWrapper}>
+          <View style={styles.MyAccountAfterLogInTextWrapper}>
+            <Text style={styles.MyAccountAfterLogInAccDetailsText}>
+              {Strings.MyAcountPersonName}
+            </Text>
+            <Text style={styles.MyAccountAfterLogInAccDetailsText}>
+              {Strings.MyAcountPersonMail}
+            </Text>
+          </View>
+          <View style={styles.MyAccountAfterLogInImageWrapper}>
+            <Image
+              source={require('../../Assets/Images/User.png')}
+              style={styles.MyAccountAfterLogInImage}
+            />
+          </View>
+        </View>
+        <View style={styles.MyAccountAfterLogInButtonsWrapper}>
+          <View style={styles.MyAccountAfterLogInCoursButtonWrapper}>
+            <Icon
+              name={'play'}
+              style={{fontSize: 25, color: Colors.yellow, marginRight: 10}}
+            />
+            <Text style={styles.MyAccountAfterLogInButton}>
+              {Strings.MyAcountCoursButton}
+            </Text>
+          </View>
+          <View style={styles.MyAccountAfterLogInUpdateButtonWrapper}>
+            <Icon
+              name={'settings'}
+              style={{fontSize: 25, color: Colors.yellow, marginRight: 10}}
+            />
+            <Text style={styles.MyAccountAfterLogInButton}>
+              {Strings.MyAcountUpdateButton}
+            </Text>
+          </View>
+        </View>
+      </Card>
+    </View>
+  );
+};
+
 export const MyAccountScreen = (props) => {
+  const {IsLogedIn} = props;
   return (
     <SafeAreaView>
       <View style={styles.TitleWrapper}>
         <Text style={styles.Title}>{Strings.MyAcountScreenTitle}</Text>
       </View>
-      <MyAcountLogIn />
-      <MyAccountDetails IsLogedIn = {false} />
+      {IsLogedIn ? <MyAccountAfterLogIn /> : <MyAcountLogIn />}
+      <MyAccountDetails IsLogedIn={IsLogedIn} />
     </SafeAreaView>
   );
 };

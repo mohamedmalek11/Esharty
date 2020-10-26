@@ -2,23 +2,23 @@ import {ScaledSheet} from 'react-native-size-matters';
 import {Colors} from '../../Ulitis/Colors';
 
 const styles = ScaledSheet.create({
-  Container: {
+  MyAccountAfterLogInContainer: {
     padding: '5@s',
     marginVertical: '10@vs',
     marginHorizontal: '20@s',
     backgroundColor: '#fff',
     borderRadius: '7@s',
   },
-  Wrapper: {
+  MyAccountAfterLogInWrapper: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     marginVertical: '5@vs',
   },
-  Image: {
+  MyAccountAfterLogInImage: {
     width: '30@s',
     height: '37@s',
   },
-  ImageWrapper: {
+  MyAccountAfterLogInImageWrapper: {
     backgroundColor: Colors.yellow,
     borderRadius: '60@s',
     paddingHorizontal: '20@s',
@@ -28,23 +28,23 @@ const styles = ScaledSheet.create({
     marginRight: '20@s',
     maxHeight: '70@s',
   },
-  TextWrapper: {
+  MyAccountAfterLogInTextWrapper: {
     marginHorizontal: '15@s',
     alignItems: 'center',
     marginVertical: '10@vs',
     marginLeft: '120@s',
   },
-  AccDetailsText: {
+  MyAccountAfterLogInAccDetailsText: {
     fontSize: '15@s',
     marginBottom: '10@s',
     textAlign: 'right',
   },
-  ButtonsWrapper: {
+  MyAccountAfterLogInButtonsWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginVertical: '10@vs'
   },
-  UpdateButtonWrapper: {
+  MyAccountAfterLogInUpdateButtonWrapper: {
     borderWidth: 1,
     borderRadius: 5,
     borderColor: Colors.Dark,
@@ -56,7 +56,7 @@ const styles = ScaledSheet.create({
     direction: 'rtl',
     alignItems: 'center',
   },
-  CoursButtonWrapper: {
+  MyAccountAfterLogInCoursButtonWrapper: {
     borderWidth: 1,
     borderRadius: 5,
     borderColor: Colors.Dark,
@@ -67,7 +67,7 @@ const styles = ScaledSheet.create({
     direction: 'rtl',
     alignItems: 'center',
   },
-  Button: {
+  MyAccountAfterLogInButton: {
     fontSize: '13@s',
   },
 });
