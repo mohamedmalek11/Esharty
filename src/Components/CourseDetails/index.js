@@ -2,10 +2,33 @@ import React from 'react';
 import {View, Text, Image, FlatList} from 'react-native';
 import {Currancy} from '../../Ulitis/Constants';
 import {DummyCourseDetails, DummyLesson} from '../../Ulitis/DummyData';
-import {Lesson} from '../Lesson';
+import {Colors} from '../../Ulitis/Colors';
 import {Strings, placeholder} from '../../Ulitis/Strings';
 import {Card} from '../Card';
 import styles from './style';
+
+const Lesson = (props) => {
+  const {Lesson} = props;
+  return (
+    <View
+      style={{
+        flexDirection: 'row',
+        direction: 'rtl',
+        backgroundColor: Colors.softBackground,
+        borderRadius: 5,
+        marginHorizontal: 20,
+        height: 70,
+        alignItems: 'center',
+        marginVertical: 5,
+      }}>
+      <Image
+        source={require('../../Assets/Images/Lesson.png')}
+        style={{width: 60, height: 60, margin: 5}}
+      />
+      <Text style={{fontSize: 17, marginHorizontal: 10}}>{Lesson.Title}</Text>
+    </View>
+  );
+};
 
 export const CourseDetails = (props) => {
   const renderLesson = ({item}) => {

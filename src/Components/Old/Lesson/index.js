@@ -15,7 +15,7 @@ export const Lesson = (props) => {
         marginHorizontal: 20,
         height: 70,
         alignItems: 'center',
-        marginVertical: 5
+        marginVertical: 5,
       }}>
       <Image
         source={require('../../Assets/Images/Lesson.png')}
