@@ -1,12 +1,37 @@
 import React from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text, Image, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Input} from '../../Components/Input';
 import {Colors} from '../../Ulitis/Colors';
-import {AccountSetting} from '../../Components/AccountSetting';
 import {AppButton} from '../../Components/AppButton';
 import {placeholder, Strings} from '../../Ulitis/Strings';
+import {Card} from '../../Components/Card';
 import styles from './style';
+
+const AccountSetting = (props) => {
+  return (
+    <View>
+      <Card style={styles.AccountSettingContainer}>
+        <View style={styles.AccountSettingWrapper}>
+          <View style={styles.AccountSettingTextWrapper}>
+            <Text style={styles.AccountSettingAccDetailsText}>
+              {Strings.MyAcountPersonName}
+            </Text>
+            <Text style={styles.AccountSettingAccDetailsText}>
+              {Strings.MyAcountPersonMail}
+            </Text>
+          </View>
+          <View style={styles.AccountSettingImageWrapper}>
+            <Image
+              source={require('../../Assets/Images/User.png')}
+              style={styles.AccountSettingImage}
+            />
+          </View>
+        </View>
+      </Card>
+    </View>
+  );
+};
 
 const ValidateName = (NameText) => {
   return /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/.test(
@@ -56,9 +81,9 @@ export const UpdateAccountScreen = (props) => {
           renderIcon={<Icon name={'key-outline'} style={styles.InputIcon} />}
           marginTop={50}
           autoCorrect={false}
-          autoCompleteType = {'password'}
+          autoCompleteType={'password'}
           onChangeText={ChangedPasslVal}
-          secureTextEntry = {true}
+          secureTextEntry={true}
         />
 
         <View style={{justifyContent: 'center', flex: 1, marginBottom: 50}}>

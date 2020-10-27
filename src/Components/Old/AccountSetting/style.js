@@ -2,23 +2,23 @@ import {ScaledSheet} from 'react-native-size-matters';
 import {Colors} from '../../Ulitis/Colors';
 
 const styles = ScaledSheet.create({
-  Container: {
+  AccountSettingContainer: {
     padding: '5@s',
     marginVertical: '10@vs',
     marginHorizontal: '20@s',
     backgroundColor: '#fff',
     borderRadius: '7@s',
   },
-  Wrapper: {
+  AccountSettingWrapper: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     marginVertical: '10@vs',
   },
-  Image: {
+  AccountSettingImage: {
     width: '30@s',
     height: '37@s',
   },
-  ImageWrapper: {
+  AccountSettingImageWrapper: {
     backgroundColor: Colors.yellow,
     borderRadius: '60@s',
     paddingHorizontal: '20@s',
@@ -28,13 +28,13 @@ const styles = ScaledSheet.create({
     marginRight: '20@s',
     maxHeight: '70@s',
   },
-  TextWrapper: {
+  AccountSettingTextWrapper: {
     marginHorizontal: '15@s',
     alignItems: 'center',
     marginVertical: '10@vs',
     marginLeft: '120@s',
   },
-  AccDetailsText: {
+  AccountSettingAccDetailsText: {
     fontSize: '15@s',
     marginBottom: '10@s',
     textAlign: 'right',
