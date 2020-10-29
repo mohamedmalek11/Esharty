@@ -1,20 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  Image,
-  FlatList,
-} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {dummyCourses} from '../../Ulitis/DummyData';
-import {Card} from '../../Components/Card';
 import {Strings} from '../../Ulitis/Strings';
+import {Card} from '../Card';
 import styles from './style';
 
-const MyCourses = (props) => {
+export const MyCourses = (props) => {
   const {MyCourses} = props;
 
   return (
@@ -54,24 +46,5 @@ const MyCourses = (props) => {
         </View>
       </Card>
     </View>
-  );
-};
-
-export const MyCoursesScreen = (props) => {
-  const renderCourses = ({item}) => {
-    return <MyCourses MyCourses={item} />;
-  };
-  return (
-    <SafeAreaView>
-      <ScrollView>
-        <Icon name={'chevron-forward-outline'} style={styles.BackIcon} />
-        <View style={styles.TitleWrapper}>
-          <Text style={styles.Title}>{Strings.MyCoursesTitle}</Text>
-        </View>
-        <View>
-          <FlatList data={dummyCourses} renderItem={renderCourses} />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
   );
 };

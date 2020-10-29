@@ -4,20 +4,19 @@ import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window');
 
-const ImageWidth = 420;
-const ImageHight = 250;
+
 
 const styles = ScaledSheet.create({
-  wrapper: {
+  MyCourseswrapper: {
     alignItems: 'center',
     marginBottom: '-30@vs',
   },
-  Image: {
-    width: ImageWidth,
-    height: ImageHight,
+  MyCoursesImage: {
+    width: 420,
+    height: 250,
   },
 
-  MainText: {
+  MyCoursesMainText: {
     color: '#fff',
     backgroundColor: Colors.Dark,
     borderRadius: 7,
@@ -29,19 +28,20 @@ const styles = ScaledSheet.create({
     margin: '5@s',
     marginBottom: '12@vs',
   },
-  Details: {
+  MyCoursesDetails: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: 360,
+    justifyContent: 'flex-end',
   },
-  SeconeryText: {
+  MyCoursesSeconeryText: {
     color: '#fff',
     fontSize: '13@s',
     textAlign: 'right',
     
   },
-  Icon: {
+  MyCoursesIcon: {
     color: '#fff',
     fontSize: 17,
     padding: 3,
@@ -50,7 +50,7 @@ const styles = ScaledSheet.create({
     overflow: 'hidden',
     marginRight: 5
   },
-  Button: {
+  MyCoursesButton: {
     color: '#fff',
     fontSize: '13@s',
     textAlign: 'right',
@@ -60,12 +60,13 @@ const styles = ScaledSheet.create({
     paddingHorizontal: '3@s',
     paddingVertical: '2@s',
     marginHorizontal: 25,
+    alignSelf: 'flex-end',
   },
-  TextWrapper: {
+  MyCoursesTextWrapper: {
     position: 'absolute',
     alignSelf: 'center',
   },
-  LinearGradient: {
+  MyCoursesLinearGradient: {
     borderRadius: 7,
     padding: 9,
     alignItems: 'flex-start',

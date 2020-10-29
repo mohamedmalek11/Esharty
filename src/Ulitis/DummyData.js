@@ -87,11 +87,13 @@ export const dummyCourses1 = {
   Title: 'دورة الأشارات المستوى الأول',
   Cost: '200 ريال',
   Courses: '9 دروس',
+  isCompleted: 'true'
 };
 export const dummyCourses2 = {
   Title: 'دورة الأشارات المستوى الأول',
   Cost: '500 ريال',
   Courses: '5 دروس',
+  isCompleted: 'true'
 };
 export const dummyCourses3 = {
   Title: 'دورة الأشارات المستوى الأول',
