@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import {Card} from '../Card';
-import {Lesson1} from '../../Ulitis/DummyData';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../../Ulitis/Colors';
 
