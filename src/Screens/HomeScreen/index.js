@@ -11,11 +11,25 @@ import {dummyCategories, dummyTopics} from '../../Ulitis/DummyData';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card} from '../../Components/Card';
+import axios from 'axios';
 import {Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
 const MainCategory = (props) => {
   const {MainCategory} = props;
+  const [Banner, SetBanner] = React.useState([]);
+
+   axios.get('https://esharti.net/api/banner/')
+    .then((responseJson) => {
+      console.log(responseJson.data)
+      SetBanner(responseJson.data);
+    })
+    .catch((error) => {
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+ // ADD THIS THROW error
+  throw error;
+    });
+    
 
   return (
     <View style={{paddingTop: 15}}>
@@ -108,6 +122,7 @@ export const HomeScreen = (props) => {
           renderItem={renderCategory}
           horizontal={true}
           style={styles.FlatList}
+          showsHorizontalScrollIndicator = {false}
         />
 
         <View style={styles.topicsTextWrapper}>
