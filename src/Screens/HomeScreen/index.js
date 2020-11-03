@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,7 +7,7 @@ import {
   SafeAreaView,
   FlatList,
 } from 'react-native';
-import {dummyCategories, dummyTopics} from '../../Ulitis/DummyData';
+import {dummyCategory1, dummyTopics} from '../../Ulitis/DummyData';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card} from '../../Components/Card';
@@ -15,52 +15,41 @@ import axios from 'axios';
 import {Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
-const MainCategory = (props) => {
-  const {MainCategory} = props;
-  const [Banner, SetBanner] = React.useState([]);
 
-   axios.get('https://esharti.net/api/banner/')
-    .then((responseJson) => {
-      console.log(responseJson.data)
-      SetBanner(responseJson.data);
-    })
-    .catch((error) => {
-      console.log('There has been a problem with your fetch operation: ' + error.message);
- // ADD THIS THROW error
-  throw error;
-    });
     
-
-  return (
-    <View style={{paddingTop: 15}}>
-      <View style={styles.Card}>
-        <Image
-          source={require('../../Assets/Images/MainCategoryImage.png')}
-          style={styles.Image}
-        />
-        <LinearGradient
-          colors={[
-            'rgba(255,255,255,0.0)',
-            'rgba(0,0,0,0.1)',
-            'rgba(0,0,0,0.3)',
-          ]}
-          style={styles.LinearGradient}></LinearGradient>
-
-        <View style={styles.TextWrapper}>
-          <View>
-            <Text style={styles.MainCategoryText}>{MainCategory.title}</Text>
-          </View>
-          <View>
-            <Text style={styles.CategorySeconeryText}>
-              {MainCategory.secTitle}
-            </Text>
+const MainCategory = ({item}) => {
+    return (
+      <View style={{paddingTop: 15}}>
+        <View style={styles.Card}>
+  
+          <Image
+          source={{uri: item.image}} 
+            style={styles.Image}
+            resizeMode= 'cover'
+          />
+          <LinearGradient
+            colors={[
+              'rgba(255,255,255,0.0)',
+              'rgba(0,0,0,0.1)',
+              'rgba(0,0,0,0.3)',
+            ]}
+            style={styles.LinearGradient}/>
+  
+          <View style={styles.TextWrapper}>
+            <View>
+              <Text style={styles.MainCategoryText}>{dummyCategory1.title}</Text>
+            </View>
+            <View>
+              <Text style={styles.CategorySeconeryText}>
+                {dummyCategory1.secTitle}
+              </Text>
+            </View>
           </View>
         </View>
       </View>
-    </View>
-  );
-};
-
+    );
+  };
+  
 const Topics = (props) => {
   const {Topics} = props;
 
@@ -94,9 +83,24 @@ const Topics = (props) => {
 };
 
 export const HomeScreen = (props) => {
-  const renderCategory = ({item}) => {
-    return <MainCategory MainCategory={item} />;
-  };
+  const [Banner, SetBanner] = React.useState([]);
+
+  useEffect(() => {
+    getData()
+  },[])
+
+  const getData = () => {
+    return axios.get('https://esharti.net/api/banner/')
+    .then((responseJson) => {
+      console.log(responseJson.data)
+      SetBanner(responseJson.data.data);
+    })
+    .catch((error) => {
+      console.log('There has been a problem with your fetch operation: ' + error.message);
+ // ADD THIS THROW error
+  throw error;
+    });
+  }
   const renderTopics = ({item}) => {
     return <Topics Topics={item} />;
   };
@@ -118,8 +122,8 @@ export const HomeScreen = (props) => {
           </Text>
         </View>
         <FlatList
-          data={dummyCategories}
-          renderItem={renderCategory}
+          data={Banner}
+          renderItem={({item}) => <MainCategory item={item}/>}
           horizontal={true}
           style={styles.FlatList}
           showsHorizontalScrollIndicator = {false}

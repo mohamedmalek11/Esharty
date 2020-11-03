@@ -20,8 +20,8 @@ const styles = ScaledSheet.create({
     borderRadius: 20,
   },
   FlatList: {
-      direction: 'rtl',
-      marginStart:10
+    direction: 'rtl',
+    marginStart: 10,
   },
   iconWrapper: Platform.select({
     android: {
@@ -50,7 +50,7 @@ const styles = ScaledSheet.create({
   topicsTextWrapper: {
     alignItems: 'flex-end',
     paddingHorizontal: '20@s',
-    paddingBottom: '10@vs'
+    paddingBottom: '10@vs',
   },
   topicsText: {
     fontSize: '17@s',
@@ -66,6 +66,7 @@ const styles = ScaledSheet.create({
       width: 240,
       height: 313,
       marginBottom: 20,
+      marginHorizontal: 10,
     },
     ios: {
       shadowColor: '#000',
@@ -74,16 +75,17 @@ const styles = ScaledSheet.create({
       shadowOffset: {width: 0, height: 5},
       padding: 5,
       margin: 5,
-      backgroundColor: null,
       width: 240,
       height: 320,
+      marginHorizontal: 10,
     },
   }),
   Image: {
-    width: 270,
-    height: 350,
+    width: 240,
+    height: 320,
     alignSelf: 'center',
     top: -15,
+    borderRadius: 6,
   },
 
   TextWrapper: {
@@ -110,12 +112,11 @@ const styles = ScaledSheet.create({
     borderRadius: 7,
     padding: 9,
     alignItems: 'center',
-    width: 226,
-    height: 305,
+    width: 240,
+    height: 310,
     direction: 'rtl',
     paddingTop: 10,
     position: 'absolute',
-    left: 7,
   },
   TopicsContainer: {
     padding: '5@s',
