@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import {CourseWatchScreen} from './src/Screens/CourseWatchScreen';
+import {HomeTabs} from './src/Navication/HomeTabs';
 
-function App(props) {
-  return <CourseWatchScreen />;
+function App() {
+  return <HomeTabs />;
 }
 
 export default App;
