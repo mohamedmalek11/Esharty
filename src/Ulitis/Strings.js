@@ -39,6 +39,10 @@ export const Strings = {
   VideoLenth: 'مدة الدرس',
   VideoLenthTime: '10:23',
   FirstLesson: 'الدرس الثالث',
+  TabsHome: 'الرئيسية',
+  TabsCourses: 'الدورات',
+  TabsDictionary: 'القاموس',
+  TabsAccount: 'حسابي',
 };
 
 export const placeholder = {
