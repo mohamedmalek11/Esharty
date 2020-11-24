@@ -1,13 +1,15 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image, Pressable} from 'react-native';
 import {Strings} from '../../Ulitis/Strings';
 import {AppButton} from '../../Components/AppButton';
+import {useNavigation} from '@react-navigation/native';
 import {Card} from '../../Components/Card';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../../Ulitis/Colors';
 import styles from './style';
 
 const MyAcountLogIn = (props) => {
+  const navigation = useNavigation();
   return (
     <View>
       <Card style={styles.MyAcountLogInContainer}>
@@ -19,6 +21,7 @@ const MyAcountLogIn = (props) => {
             <AppButton
               title={Strings.MyAcountLogInText}
               WrapperStyle={styles.MyAcountLogInLogInText}
+              onPress={() => navigation.navigate('ContactUsScreen')}
             />
           </View>
           <View style={styles.MyAcountLogInImageWrapper}>
@@ -80,11 +83,13 @@ const MyAccountAfterLogIn = (props) => {
 
 const MyAccountDetails = (props) => {
   const {IsLogedIn} = props;
-
+  const navigation = useNavigation();
   return (
     <Card style={styles.DetailsCard}>
       <View style={styles.AccountDetailsWrapper}>
-        <View style={styles.DetailsWrapper}>
+        <Pressable
+          style={styles.DetailsWrapper}
+          onPress={() => navigation.navigate('ContactUsScreen')}>
           <View style={{flexDirection: 'row'}}>
             <Icon name={'call-sharp'} style={styles.DetailsIcon} />
             <Text style={styles.DetailsText}>{Strings.MyAcountContactUs}</Text>
@@ -92,7 +97,7 @@ const MyAccountDetails = (props) => {
           <View>
             <Icon name={'chevron-back-sharp'} style={{fontSize: 25}} />
           </View>
-        </View>
+        </Pressable>
         <View
           style={{
             height: 0.5,
@@ -101,7 +106,9 @@ const MyAccountDetails = (props) => {
           }}
         />
 
-        <View style={styles.DetailsWrapper}>
+        <Pressable
+          style={styles.DetailsWrapper}
+          onPress={() => navigation.navigate('AboutAppScreen')}>
           <View style={{flexDirection: 'row'}}>
             <Icon
               name={'information-sharp'}
@@ -112,7 +119,7 @@ const MyAccountDetails = (props) => {
           <View>
             <Icon name={'chevron-back-sharp'} style={{fontSize: 25}} />
           </View>
-        </View>
+        </Pressable>
         <View
           style={{
             height: 0.5,
@@ -121,7 +128,7 @@ const MyAccountDetails = (props) => {
           }}
         />
 
-        <View style={styles.DetailsWrapper}>
+        <Pressable style={styles.DetailsWrapper} onPress={() => {}}>
           <View style={{flexDirection: 'row'}}>
             <Icon name={'share-social-sharp'} style={styles.DetailsIcon} />
             <Text style={styles.DetailsText}>{Strings.MyAcountShareApp}</Text>
@@ -129,7 +136,7 @@ const MyAccountDetails = (props) => {
           <View>
             <Icon name={'chevron-back-sharp'} style={{fontSize: 25}} />
           </View>
-        </View>
+        </Pressable>
         <View
           style={{
             height: 0.5,
@@ -171,6 +178,7 @@ const MyAccountDetails = (props) => {
 
 export const MyAccountScreen = (props) => {
   const {IsLogedIn} = props;
+
   return (
     <SafeAreaView>
       <View style={styles.TitleWrapper}>

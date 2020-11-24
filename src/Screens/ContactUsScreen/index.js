@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image,ScrollView} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Input} from '../../Components/Input';
 import {AppButton} from '../../Components/AppButton';
@@ -7,13 +8,18 @@ import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
 export const ContactUsScreen = (props) => {
+  const navigation = useNavigation();
   return (
-    <SafeAreaView style={{}}>
+    <ScrollView style={{}}>
       <View style={styles.Header}>
         <View style={styles.HeaderTitleWrapper}>
           <Text style={styles.HeaderTitle}>{Strings.ConactUsTitle}</Text>
         </View>
-        <Icon name={'chevron-forward'} style={styles.BackIcon} />
+        <Icon
+          name={'chevron-forward'}
+          style={styles.BackIcon}
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View style={styles.ImageWrapper}>
         <Image
@@ -37,7 +43,7 @@ export const ContactUsScreen = (props) => {
         <Input
           borderd
           placeholder={placeholder.ContactUsMessage}
-          WrapperStyle={{marginTop: 30, padding: 20, paddingBottom: 150}}
+          WrapperStyle={{marginTop: 30, padding: 20, paddingBottom: 100}}
           borderColor={'#E5E5E5'}
         />
         <View style={{marginTop: 30}}>
@@ -47,6 +53,6 @@ export const ContactUsScreen = (props) => {
           />
         </View>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
