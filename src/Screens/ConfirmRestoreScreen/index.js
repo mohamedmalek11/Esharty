@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/native';
 import {Input} from '../../Components/Input';
 import {Colors} from '../../Ulitis/Colors';
 import {AppButton} from '../../Components/AppButton';
@@ -9,13 +10,11 @@ import {placeholder, Strings} from '../../Ulitis/Strings';
 import styles from './style';
 
 const ValidateCode = (CodeText) => {
-  return /^[0-9]{5}$/.test(
-    CodeText,
-  );
+  return /^[0-9]{5}$/.test(CodeText);
 };
 export const ConfirmRestoreScreen = (props) => {
   const [CodeVal, ChangedCodeVal] = React.useState('');
-
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.Header}>
@@ -30,7 +29,11 @@ export const ConfirmRestoreScreen = (props) => {
           paddingTop: 30,
         }}>
         <Card style={styles.IconWrapper}>
-          <Icon name={'close-outline'} style={styles.Icon} />
+          <Icon
+            name={'close-outline'}
+            style={styles.Icon}
+            onPress={() => navigation.goBack()}
+          />
         </Card>
         <Text style={{fontSize: 15}}>{Strings.InterConfirmCode}</Text>
       </View>
@@ -49,9 +52,7 @@ export const ConfirmRestoreScreen = (props) => {
             WrapperStyle={{colore: Colors.yellow, paddingVertical: 10}}
             titleStyle={{fontSize: 17, paddingVertical: 7}}
             onPress={() => {
-              if (
-                !ValidateCode(CodeVal)
-              ) {
+              if (!ValidateCode(CodeVal)) {
                 alert('wrong ');
                 return;
               }

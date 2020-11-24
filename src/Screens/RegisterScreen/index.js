@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, SafeAreaView, Image} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/native';
 import {Input} from '../../Components/Input';
 import {Colors} from '../../Ulitis/Colors';
 import {AppButton} from '../../Components/AppButton';
@@ -23,14 +24,18 @@ export const RegisterScreen = (props) => {
   const [nameVal, ChangedNameVal] = React.useState('');
   const [mailVal, ChangedMailVal] = React.useState('');
   const [PassVal, ChangedPasslVal] = React.useState('');
-
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.Header}>
         <View style={styles.HeaderTitleWrapper}>
           <Text style={styles.HeaderTitle}>{Strings.LogInTitle}</Text>
         </View>
-        <Icon name={'chevron-forward'} style={styles.BackIcon} />
+        <Icon
+          name={'chevron-forward'}
+          style={styles.BackIcon}
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View style={styles.ImageWrapper}>
         <Image

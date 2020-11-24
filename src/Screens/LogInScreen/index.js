@@ -78,7 +78,11 @@ export const LogInScreen = (props) => {
             justifyContent: 'space-around',
             flex: 1,
           }}>
-          <Text style={{fontSize: 15}}>{Strings.RestorPassButton}</Text>
+          <Text
+            style={{fontSize: 15}}
+            onPress={() => navigation.navigate('RestorePassScreen')}>
+            {Strings.RestorPassButton}
+          </Text>
         </View>
         <View
           style={{
@@ -88,7 +92,8 @@ export const LogInScreen = (props) => {
             flexDirection: 'row',
           }}>
           <Text
-            style={{fontSize: 15, marginHorizontal: 10, color: Colors.yellow}}>
+            style={{fontSize: 15, marginHorizontal: 10, color: Colors.yellow}}
+            onPress={() => navigation.navigate('RegisterScreen')}>
             {Strings.RegisterNow}
           </Text>
           <Text style={{fontSize: 15}}>{Strings.DontHaveAccount}</Text>

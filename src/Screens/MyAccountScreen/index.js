@@ -21,7 +21,7 @@ const MyAcountLogIn = (props) => {
             <AppButton
               title={Strings.MyAcountLogInText}
               WrapperStyle={styles.MyAcountLogInLogInText}
-              onPress={() => navigation.navigate('ContactUsScreen')}
+              onPress={() => navigation.navigate('LogInScreen')}
             />
           </View>
           <View style={styles.MyAcountLogInImageWrapper}>

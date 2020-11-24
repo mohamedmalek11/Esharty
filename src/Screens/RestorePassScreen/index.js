@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useNavigation} from '@react-navigation/native';
 import {Input} from '../../Components/Input';
 import {Colors} from '../../Ulitis/Colors';
 import {AppButton} from '../../Components/AppButton';
@@ -14,14 +15,18 @@ const ValidateMail = (MailText) => {
 
 export const RestorePassScreen = (props) => {
   const [mailVal, ChangedMailVal] = React.useState('');
-
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={styles.Header}>
         <Text style={styles.HeaderTitle}>{Strings.RestorePassTitle}</Text>
       </View>
       <Card style={styles.IconWrapper}>
-        <Icon name={'close-outline'} style={styles.Icon} />
+        <Icon
+          name={'close-outline'}
+          style={styles.Icon}
+          onPress={() => navigation.goBack()}
+        />
       </Card>
       <View style={styles.InputWrapper}>
         <Input
@@ -41,10 +46,7 @@ export const RestorePassScreen = (props) => {
                 alert('wrong ');
                 return;
               }
-              {
-                alert('you enterd ' + mailVal);
-                return;
-              }
+              navigation.navigate('ConfirmRestoreScreen')
             }}
           />
         </Card>
