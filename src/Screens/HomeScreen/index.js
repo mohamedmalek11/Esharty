@@ -28,16 +28,16 @@ const MainCategory = ({item}) => {
           style={styles.Image}
           resizeMode="cover"
         />
-        <LinearGradient
+        {/* <LinearGradient
           colors={[
             'rgba(255,255,255,0.0)',
             'rgba(0,0,0,0.1)',
             'rgba(0,0,0,0.3)',
           ]}
           style={styles.LinearGradient}
-        />
+        /> */}
 
-        <View style={styles.TextWrapper}>
+        {/* <View style={styles.TextWrapper}>
           <View>
             <Text style={styles.MainCategoryText}>{dummyCategory1.title}</Text>
           </View>
@@ -46,7 +46,7 @@ const MainCategory = ({item}) => {
               {dummyCategory1.secTitle}
             </Text>
           </View>
-        </View>
+        </View> */}
       </View>
     </View>
   );

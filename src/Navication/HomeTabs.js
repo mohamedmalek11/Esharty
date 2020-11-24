@@ -36,7 +36,12 @@ export function HomeTabs(props) {
           activeTintColor: Colors.yellow,
           inactiveTintColor: Colors.Dark,
           labelStyle: {fontSize: 12},
-          style: {margin: 15, marginTop: 10, borderTopWidth: 0,marginHorizontal:0},
+          style: {
+            margin: 15,
+            marginTop: 10,
+            borderTopWidth: 0,
+            marginHorizontal: 0,
+          },
         }}
         initialRouteName={'Home'}>
         <Tabs.Screen
