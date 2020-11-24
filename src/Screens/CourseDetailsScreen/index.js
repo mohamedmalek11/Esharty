@@ -11,6 +11,7 @@ import {AppButton} from '../../Components/AppButton';
 import {placeholder, Strings} from '../../Ulitis/Strings';
 import {Colors} from '../../Ulitis/Colors';
 import {DummyCourseDetails, DummyLesson} from '../../Ulitis/DummyData';
+import {useNavigation} from '@react-navigation/native';
 import {Currancy} from '../../Ulitis/Constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Card} from '../../Components/Card';
@@ -87,12 +88,14 @@ export const CourseDetails = (props) => {
 };
 
 export const CourseDetailsScreen = () => {
+  const navigation = useNavigation()
   return (
     <SafeAreaView>
       <ScrollView>
         <Icon
           name={'chevron-forward-outline'}
           style={{fontSize: 30, textAlign: 'right', marginHorizontal: 20}}
+          onPress = {() => navigation.goBack()}
         />
         <Text
           style={{

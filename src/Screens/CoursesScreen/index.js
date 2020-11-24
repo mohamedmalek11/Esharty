@@ -6,15 +6,18 @@ import {
   Image,
   SafeAreaView,
   FlatList,
+  Pressable,
 } from 'react-native';
 import {dummyCourses} from '../../Ulitis/DummyData';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 import {Strings} from '../../Ulitis/Strings';
 import {Card} from '../../Components/Card';
 import styles from './style';
 
 const Courses = (props) => {
   const {Courses} = props;
+  const navigation = useNavigation();
 
   return (
     <View style={styles.wrapper}>
@@ -36,7 +39,13 @@ const Courses = (props) => {
               <Text style={styles.MainText}>{Courses.Title}</Text>
             </View>
             <View style={styles.Details}>
-              <Text style={styles.Button}>{Strings.CoursesDetialsButton}</Text>
+              <Pressable
+                onPress={() => navigation.navigate("CourseDetailsScreen")}>
+                <Text style={styles.Button}>
+                  {Strings.CoursesDetialsButton}
+                </Text>
+              </Pressable>
+
               <Text style={styles.SeconeryText}>{Courses.Cost}</Text>
               <Text style={styles.SeconeryText}>{Courses.Courses}</Text>
             </View>
