@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   ScrollView,
+  Pressable
 } from 'react-native';
 import {AppButton} from '../../Components/AppButton';
 import {placeholder, Strings} from '../../Ulitis/Strings';
@@ -19,8 +20,9 @@ import styles from './style';
 
 const Lesson = (props) => {
   const {Lesson} = props;
+  const navigation = useNavigation();
   return (
-    <View
+    <Pressable
       style={{
         flexDirection: 'row',
         direction: 'rtl',
@@ -30,20 +32,19 @@ const Lesson = (props) => {
         height: 70,
         alignItems: 'center',
         marginVertical: 5,
-      }}>
+      }}
+      onPress={() => navigation.navigate('CourseWatchScreen')}>
       <Image
         source={require('../../Assets/Images/Lesson.png')}
         style={{width: 60, height: 60, margin: 5}}
       />
       <Text style={{fontSize: 17, marginHorizontal: 10}}>{Lesson.Title}</Text>
-    </View>
+    </Pressable>
   );
 };
 
 export const CourseDetails = (props) => {
-  const renderLesson = ({item}) => {
-    return <Lesson Lesson={item} />;
-  };
+  
   return (
     <View>
       <Card style={styles.Container}>
@@ -79,7 +80,9 @@ export const CourseDetails = (props) => {
 
         <FlatList
           data={DummyLesson}
-          renderItem={renderLesson}
+          renderItem={({item}) => {
+            return <Lesson Lesson={item} />;
+          }}
           style={{height: 150}}
         />
       </Card>
@@ -88,14 +91,14 @@ export const CourseDetails = (props) => {
 };
 
 export const CourseDetailsScreen = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <ScrollView>
         <Icon
           name={'chevron-forward-outline'}
           style={{fontSize: 30, textAlign: 'right', marginHorizontal: 20}}
-          onPress = {() => navigation.goBack()}
+          onPress={() => navigation.goBack()}
         />
         <Text
           style={{

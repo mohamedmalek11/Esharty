@@ -3,6 +3,7 @@ import {View, Text, FlatList, Image, SafeAreaView} from 'react-native';
 import Video from 'react-native-video';
 import {Strings, placeholder} from '../../Ulitis/Strings';
 import {AppButton} from '../../Components/AppButton';
+import {useNavigation} from '@react-navigation/native';
 import {Colors} from '../../Ulitis/Colors';
 import {Card} from '../../Components/Card';
 import {DummyLessonCard} from '../../Ulitis/DummyData';
@@ -71,6 +72,7 @@ const LessonCard = (props) => {
 };
 
 export const CourseWatchScreen = () => {
+  const navigation = useNavigation();
   const RenderItem = ({item}) => {
     return <LessonCard LessonCard={item} />;
   };
@@ -80,6 +82,7 @@ export const CourseWatchScreen = () => {
       <Icon
         name={'chevron-forward-outline'}
         style={{fontSize: 30, textAlign: 'right', marginHorizontal: 10}}
+        onPress={() => navigation.goBack()}
       />
       <Text
         style={{

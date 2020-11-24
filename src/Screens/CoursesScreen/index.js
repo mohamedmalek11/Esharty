@@ -40,7 +40,7 @@ const Courses = (props) => {
             </View>
             <View style={styles.Details}>
               <Pressable
-                onPress={() => navigation.navigate("CourseDetailsScreen")}>
+                onPress={() => navigation.navigate('CourseDetailsScreen')}>
                 <Text style={styles.Button}>
                   {Strings.CoursesDetialsButton}
                 </Text>
@@ -57,9 +57,6 @@ const Courses = (props) => {
 };
 
 export const CoursesScreen = (props) => {
-  const renderCourses = ({item}) => {
-    return <Courses Courses={item} />;
-  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -67,7 +64,12 @@ export const CoursesScreen = (props) => {
           <Text style={styles.Title}>{Strings.CoursesTitle}</Text>
         </View>
         <View>
-          <FlatList data={dummyCourses} renderItem={renderCourses} />
+          <FlatList
+            data={dummyCourses}
+            renderItem={({item}) => {
+              return <Courses Courses={item} />;
+            }}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
