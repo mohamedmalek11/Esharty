@@ -4,7 +4,7 @@ import {CoursesStack} from './CoursesStack';
 import {MyAccountStack} from './MyAccountStack';
 import {DictionaryStack} from './DictionaryStack';
 import {NavigationContainer} from '@react-navigation/native';
-import {scale} from 'react-native-size-matters'
+import {scale} from 'react-native-size-matters';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../Ulitis/Colors';
 import {Strings} from '../Ulitis/Strings';
@@ -17,7 +17,7 @@ export function HomeTabs(props) {
     <NavigationContainer>
       <Tabs.Navigator
         screenOptions={({route}) => ({
-          tabBarIcon: ({ color, size}) => {
+          tabBarIcon: ({color, size}) => {
             let iconName;
 
             if (route.name === 'Home') {
@@ -42,18 +42,14 @@ export function HomeTabs(props) {
             marginTop: scale(10),
             borderTopWidth: 0,
             marginHorizontal: 0,
+            direction: 'rtl',
           },
         }}
         initialRouteName={'Home'}>
         <Tabs.Screen
-          name="MyAccount"
-          component={MyAccountStack}
-          options={{tabBarLabel: Strings.TabsAccount}}
-        />
-        <Tabs.Screen
-          name="Dictionary"
-          component={DictionaryStack}
-          options={{tabBarLabel: Strings.TabsDictionary}}
+          name="Home"
+          component={HomeStack}
+          options={{tabBarLabel: Strings.TabsHome}}
         />
         <Tabs.Screen
           name="Courses"
@@ -61,9 +57,14 @@ export function HomeTabs(props) {
           options={{tabBarLabel: Strings.TabsCourses}}
         />
         <Tabs.Screen
-          name="Home"
-          component={HomeStack}
-          options={{tabBarLabel: Strings.TabsHome}}
+          name="Dictionary"
+          component={DictionaryStack}
+          options={{tabBarLabel: Strings.TabsDictionary}}
+        />
+        <Tabs.Screen
+          name="MyAccount"
+          component={MyAccountStack}
+          options={{tabBarLabel: Strings.TabsAccount}}
         />
       </Tabs.Navigator>
     </NavigationContainer>
