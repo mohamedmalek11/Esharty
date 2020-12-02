@@ -6,10 +6,11 @@ import {
   Image,
   FlatList,
   ScrollView,
-  Pressable
+  Pressable,
 } from 'react-native';
 import {AppButton} from '../../Components/AppButton';
 import {placeholder, Strings} from '../../Ulitis/Strings';
+import {scale} from 'react-native-size-matters';
 import {Colors} from '../../Ulitis/Colors';
 import {DummyCourseDetails, DummyLesson} from '../../Ulitis/DummyData';
 import {useNavigation} from '@react-navigation/native';
@@ -27,24 +28,25 @@ const Lesson = (props) => {
         flexDirection: 'row',
         direction: 'rtl',
         backgroundColor: Colors.softBackground,
-        borderRadius: 5,
-        marginHorizontal: 20,
-        height: 70,
+        borderRadius: scale(5),
+        marginHorizontal: scale(20),
+        height: scale(70),
         alignItems: 'center',
-        marginVertical: 5,
+        marginVertical: scale(5),
       }}
       onPress={() => navigation.navigate('CourseWatchScreen')}>
       <Image
         source={require('../../Assets/Images/Lesson.png')}
-        style={{width: 60, height: 60, margin: 5}}
+        style={{width: scale(60), height: scale(60), margin: scale(5)}}
       />
-      <Text style={{fontSize: 17, marginHorizontal: 10}}>{Lesson.Title}</Text>
+      <Text style={{fontSize: scale(17), marginHorizontal: scale(10)}}>
+        {Lesson.Title}
+      </Text>
     </Pressable>
   );
 };
 
 export const CourseDetails = (props) => {
-  
   return (
     <View>
       <Card style={styles.Container}>
@@ -71,9 +73,9 @@ export const CourseDetails = (props) => {
         <Text
           style={{
             textAlign: 'right',
-            marginHorizontal: 10,
-            fontSize: 18,
-            marginBottom: 10,
+            marginHorizontal: scale(10),
+            fontSize: scale(18),
+            marginBottom: scale(10),
           }}>
           {Strings.CourseListTitle}
         </Text>
@@ -83,7 +85,7 @@ export const CourseDetails = (props) => {
           renderItem={({item}) => {
             return <Lesson Lesson={item} />;
           }}
-          style={{height: 150}}
+          style={{height: scale(250)}}
         />
       </Card>
     </View>
@@ -97,26 +99,31 @@ export const CourseDetailsScreen = () => {
       <ScrollView>
         <Icon
           name={'chevron-forward-outline'}
-          style={{fontSize: 30, textAlign: 'right', marginHorizontal: 20}}
+          style={{
+            fontSize: scale(30),
+            textAlign: 'right',
+            marginHorizontal: scale(20),
+          }}
           onPress={() => navigation.goBack()}
         />
         <Text
           style={{
             textAlign: 'right',
-            fontSize: 25,
-            marginHorizontal: 20,
-            marginVertical: 5,
+            fontSize: scale(25),
+            marginHorizontal: scale(20),
+            marginVertical: scale(5),
           }}>
           {Strings.CoursDetailsTitle}
         </Text>
         <CourseDetails />
+
+        <View style={{marginHorizontal: scale(20), marginTop: scale(5)}}>
+          <AppButton
+            title={placeholder.LessonTitle}
+            titleStyle={{paddingBottom: scale(5), fontSize: scale(15)}}
+          />
+        </View>
       </ScrollView>
-      <View style={{marginHorizontal: 20, marginTop: 5}}>
-        <AppButton
-          title={placeholder.LessonTitle}
-          titleStyle={{paddingBottom: 10, fontSize: 17}}
-        />
-      </View>
     </SafeAreaView>
   );
 };

@@ -4,14 +4,16 @@ import {Colors} from '../../Ulitis/Colors';
 const styles = ScaledSheet.create({
   Container: {
     padding: '5@s',
-    marginVertical: '10@vs',
+    marginVertical: '10@s',
     marginHorizontal: '20@s',
     backgroundColor: '#fff',
     borderRadius: '7@s',
   },
   Image: {
-    width: 400,
-    height: 230,
+    width: '300@s',
+    height: "200@s",
+    marginVertical: '5@s',
+    borderRadius: '10@s'
   },
   ImageWrapper: {
     marginTop: '-10@s',
@@ -24,7 +26,7 @@ const styles = ScaledSheet.create({
     direction: 'rtl',
 
     padding: '5@s',
-    marginVertical: '5@vs',
+    marginVertical: '5@s',
     marginHorizontal: '5@s',
   },
 
@@ -41,9 +43,9 @@ const styles = ScaledSheet.create({
   },
   Description: {
     direction: 'rtl',
-    fontSize: 15,
+    fontSize: "15@s",
     color: Colors.DarkGray,
-    lineHeight: 25,
+    lineHeight: "25@s",
     textAlign: 'left',
   },
 });
