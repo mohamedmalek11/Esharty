@@ -4,6 +4,7 @@ import {CoursesStack} from './CoursesStack';
 import {MyAccountStack} from './MyAccountStack';
 import {DictionaryStack} from './DictionaryStack';
 import {NavigationContainer} from '@react-navigation/native';
+import {scale} from 'react-native-size-matters'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../Ulitis/Colors';
 import {Strings} from '../Ulitis/Strings';
@@ -16,7 +17,7 @@ export function HomeTabs(props) {
     <NavigationContainer>
       <Tabs.Navigator
         screenOptions={({route}) => ({
-          tabBarIcon: ({focused, color, size}) => {
+          tabBarIcon: ({ color, size}) => {
             let iconName;
 
             if (route.name === 'Home') {
@@ -35,10 +36,10 @@ export function HomeTabs(props) {
         tabBarOptions={{
           activeTintColor: Colors.yellow,
           inactiveTintColor: Colors.Dark,
-          labelStyle: {fontSize: 12},
+          labelStyle: {fontSize: scale(12)},
           style: {
-            margin: 15,
-            marginTop: 10,
+            margin: scale(15),
+            marginTop: scale(10),
             borderTopWidth: 0,
             marginHorizontal: 0,
           },
