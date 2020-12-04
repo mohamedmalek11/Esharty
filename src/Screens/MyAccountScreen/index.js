@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Image, Pressable} from 'react-native';
+import {View, Text, ScrollView, Image, Pressable} from 'react-native';
 import {Strings} from '../../Ulitis/Strings';
 import {AppButton} from '../../Components/AppButton';
 import {useNavigation} from '@react-navigation/native';
@@ -9,76 +9,81 @@ import {Colors} from '../../Ulitis/Colors';
 import styles from './style';
 
 const MyAcountLogIn = (props) => {
+  const {IsLogedIn} = props;
   const navigation = useNavigation();
-  return (
-    <View>
-      <Card style={styles.MyAcountLogInContainer}>
-        <View style={styles.MyAcountLogInWrapper}>
-          <View style={styles.MyAcountLogInTextWrapper}>
-            <Text style={styles.MyAcountLogInGreetingText}>
-              {Strings.MyAcountGreetingText}
-            </Text>
-            <AppButton
-              title={Strings.MyAcountLogInText}
-              WrapperStyle={styles.MyAcountLogInLogInText}
-              onPress={() => navigation.navigate('LogInScreen')}
-            />
+  if (IsLogedIn) {
+    return (
+      <View>
+        <Card style={styles.MyAccountAfterLogInContainer}>
+          <View style={styles.MyAccountAfterLogInWrapper}>
+            <View style={styles.MyAccountAfterLogInTextWrapper}>
+              <Text style={styles.MyAccountAfterLogInAccDetailsText}>
+                {Strings.MyAcountPersonName}
+              </Text>
+              <Text style={styles.MyAccountAfterLogInAccDetailsText}>
+                {Strings.MyAcountPersonMail}
+              </Text>
+            </View>
+            <View style={styles.MyAccountAfterLogInImageWrapper}>
+              <Image
+                source={require('../../Assets/Images/User.png')}
+                style={styles.MyAccountAfterLogInImage}
+              />
+            </View>
           </View>
-          <View style={styles.MyAcountLogInImageWrapper}>
-            <Image
-              source={require('../../Assets/Images/User.png')}
-              style={styles.MyAcountLogInImage}
-            />
+          <View style={styles.MyAccountAfterLogInButtonsWrapper}>
+            <Pressable
+              style={styles.MyAccountAfterLogInCoursButtonWrapper}
+              onPress={() => navigation.navigate('MyCoursesScreen')}>
+              <Icon
+                name={'play'}
+                style={{fontSize: 25, color: Colors.yellow, marginRight: 10}}
+              />
+              <Text style={styles.MyAccountAfterLogInButton}>
+                {Strings.MyAcountCoursButton}
+              </Text>
+            </Pressable>
+            <Pressable
+              style={styles.MyAccountAfterLogInUpdateButtonWrapper}
+              onPress={() => navigation.navigate('UpdateAccountScreen')}>
+              <Icon
+                name={'settings'}
+                style={{fontSize: 25, color: Colors.yellow, marginRight: 10}}
+              />
+              <Text style={styles.MyAccountAfterLogInButton}>
+                {Strings.MyAcountUpdateButton}
+              </Text>
+            </Pressable>
           </View>
-        </View>
-      </Card>
-    </View>
-  );
-};
-
-const MyAccountAfterLogIn = (props) => {
-  return (
-    <View>
-      <Card style={styles.MyAccountAfterLogInContainer}>
-        <View style={styles.MyAccountAfterLogInWrapper}>
-          <View style={styles.MyAccountAfterLogInTextWrapper}>
-            <Text style={styles.MyAccountAfterLogInAccDetailsText}>
-              {Strings.MyAcountPersonName}
-            </Text>
-            <Text style={styles.MyAccountAfterLogInAccDetailsText}>
-              {Strings.MyAcountPersonMail}
-            </Text>
+        </Card>
+      </View>
+    );
+  } else {
+    return (
+      <View>
+        <Card style={styles.MyAcountLogInContainer}>
+          <View style={styles.MyAcountLogInWrapper}>
+            <View style={styles.MyAcountLogInTextWrapper}>
+              <Text style={styles.MyAcountLogInGreetingText}>
+                {Strings.MyAcountGreetingText}
+              </Text>
+              <AppButton
+                title={Strings.MyAcountLogInText}
+                WrapperStyle={styles.MyAcountLogInLogInText}
+                onPress={() => navigation.navigate('LogInScreen')}
+              />
+            </View>
+            <View style={styles.MyAcountLogInImageWrapper}>
+              <Image
+                source={require('../../Assets/Images/User.png')}
+                style={styles.MyAcountLogInImage}
+              />
+            </View>
           </View>
-          <View style={styles.MyAccountAfterLogInImageWrapper}>
-            <Image
-              source={require('../../Assets/Images/User.png')}
-              style={styles.MyAccountAfterLogInImage}
-            />
-          </View>
-        </View>
-        <View style={styles.MyAccountAfterLogInButtonsWrapper}>
-          <View style={styles.MyAccountAfterLogInCoursButtonWrapper}>
-            <Icon
-              name={'play'}
-              style={{fontSize: 25, color: Colors.yellow, marginRight: 10}}
-            />
-            <Text style={styles.MyAccountAfterLogInButton}>
-              {Strings.MyAcountCoursButton}
-            </Text>
-          </View>
-          <View style={styles.MyAccountAfterLogInUpdateButtonWrapper}>
-            <Icon
-              name={'settings'}
-              style={{fontSize: 25, color: Colors.yellow, marginRight: 10}}
-            />
-            <Text style={styles.MyAccountAfterLogInButton}>
-              {Strings.MyAcountUpdateButton}
-            </Text>
-          </View>
-        </View>
-      </Card>
-    </View>
-  );
+        </Card>
+      </View>
+    );
+  }
 };
 
 const MyAccountDetails = (props) => {
@@ -180,12 +185,12 @@ export const MyAccountScreen = (props) => {
   const {IsLogedIn} = props;
 
   return (
-    <SafeAreaView>
+    <ScrollView>
       <View style={styles.TitleWrapper}>
         <Text style={styles.Title}>{Strings.MyAcountScreenTitle}</Text>
       </View>
-      {IsLogedIn ? <MyAccountAfterLogIn /> : <MyAcountLogIn />}
-      <MyAccountDetails IsLogedIn={IsLogedIn} />
-    </SafeAreaView>
+      <MyAcountLogIn IsLogedIn={true} />
+      <MyAccountDetails IsLogedIn={true} />
+    </ScrollView>
   );
 };
