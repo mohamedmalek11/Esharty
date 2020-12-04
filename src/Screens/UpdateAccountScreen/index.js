@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, Image, SafeAreaView} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Input} from '../../Components/Input';
 import {Colors} from '../../Ulitis/Colors';
@@ -46,6 +47,8 @@ const ValidatePass = (PassText) => {
 };
 
 export const UpdateAccountScreen = (props) => {
+  const navigation = useNavigation();
+
   const [nameVal, ChangedNameVal] = React.useState('');
   const [mailVal, ChangedMailVal] = React.useState('');
   const [PassVal, ChangedPasslVal] = React.useState('');
@@ -55,7 +58,11 @@ export const UpdateAccountScreen = (props) => {
         <View style={styles.HeaderTitleWrapper}>
           <Text style={styles.HeaderTitle}>{Strings.UpdateAccountTitle}</Text>
         </View>
-        <Icon name={'chevron-forward'} style={styles.BackIcon} />
+        <Icon
+          name={'chevron-forward'}
+          style={styles.BackIcon}
+          onPress={() => navigation.goBack()}
+        />
       </View>
       <View style={styles.LogInWrapper}>
         <AccountSetting />

@@ -6,8 +6,10 @@ import {
   SafeAreaView,
   Image,
   FlatList,
+  Pressable,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {dummyCourses} from '../../Ulitis/DummyData';
 import {Card} from '../../Components/Card';
@@ -16,7 +18,7 @@ import styles from './style';
 
 const MyCourses = (props) => {
   const {MyCourses} = props;
-
+  const navigation = useNavigation();
   return (
     <View style={styles.MyCourseswrapper}>
       <Card>
@@ -48,7 +50,12 @@ const MyCourses = (props) => {
                   </Text>
                 </View>
               )}
-              <Text style={styles.MyCoursesButton}>{Strings.CheckCourse}</Text>
+              <Pressable
+                onPress={() => navigation.navigate('CourseDetailsScreen')}>
+                <Text style={styles.MyCoursesButton}>
+                  {Strings.CheckCourse}
+                </Text>
+              </Pressable>
             </View>
           </LinearGradient>
         </View>
@@ -58,18 +65,26 @@ const MyCourses = (props) => {
 };
 
 export const MyCoursesScreen = (props) => {
-  const renderCourses = ({item}) => {
-    return <MyCourses MyCourses={item} />;
-  };
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView>
       <ScrollView>
-        <Icon name={'chevron-forward-outline'} style={styles.BackIcon} />
+        <Icon
+          name={'chevron-forward-outline'}
+          style={styles.BackIcon}
+          onPress={() => navigation.goBack()}
+        />
         <View style={styles.TitleWrapper}>
           <Text style={styles.Title}>{Strings.MyCoursesTitle}</Text>
         </View>
         <View>
-          <FlatList data={dummyCourses} renderItem={renderCourses} />
+          <FlatList
+            data={dummyCourses}
+            renderItem={({item}) => {
+              return <MyCourses MyCourses={item} />;
+            }}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

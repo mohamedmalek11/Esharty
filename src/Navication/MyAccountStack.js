@@ -7,6 +7,7 @@ import {RegisterScreen} from '../Screens/RegisterScreen';
 import {RestorePassScreen} from '../Screens/RestorePassScreen';
 import {MyCoursesScreen} from '../Screens/MyCoursesScreen';
 import {UpdateAccountScreen} from '../Screens/UpdateAccountScreen';
+import {CourseDetailsScreen} from '../Screens/CourseDetailsScreen';
 import {ConfirmRestoreScreen} from '../Screens/ConfirmRestoreScreen';
 import {LogInScreen} from '../Screens/LogInScreen';
 
@@ -58,6 +59,11 @@ export function MyAccountStack(props) {
       <Stack.Screen
         name="UpdateAccountScreen"
         component={UpdateAccountScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="CourseDetailsScreen"
+        component={CourseDetailsScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
