@@ -47,9 +47,6 @@ const Dictionary = (props) => {
 };
 
 export const DictionaryScreen = (props) => {
-  const renderDictionary = ({item}) => {
-    return <Dictionary Dictionary={item} />;
-  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -57,7 +54,12 @@ export const DictionaryScreen = (props) => {
           <Text style={styles.Title}>{Strings.DictionaryTitle}</Text>
         </View>
         <View>
-          <FlatList data={dummyDictionary} renderItem={renderDictionary} />
+          <FlatList
+            data={dummyDictionary}
+            renderItem={({item}) => {
+              return <Dictionary Dictionary={item} />;
+            }}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

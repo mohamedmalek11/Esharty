@@ -22,8 +22,8 @@ const styles = ScaledSheet.create({
     alignItems: 'center',
   },
   Image: {
-    width: 345,
-    height: 256,
+    width: '330@s',
+    height: '230@s',
   },
   ImageWrapper: {
     marginTop: '-10@s',
@@ -39,8 +39,8 @@ const styles = ScaledSheet.create({
     marginHorizontal: '15@s',
     alignItems: 'flex-start',
     marginRight: '10@s',
-    maxWidth: 260,
-    width: 260,
+    maxWidth: '220@s',
+    width: '220@s',
   },
   MainTitle: {
     fontSize: '17@s',
@@ -72,7 +72,7 @@ const styles = ScaledSheet.create({
   Description: {
     color: '#222323',
     fontSize: '12@s',
-    lineHeight: 20,
+    lineHeight: '20@s',
     textAlign: 'right',
     opacity: 0.5,
     direction: 'ltr',
