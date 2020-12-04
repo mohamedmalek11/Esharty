@@ -6,7 +6,7 @@ const styles = ScaledSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: '20@s',
-    paddingTop: '20@vs',
+    paddingTop: '20@s',
   },
   logo: {
     width: '160@s',
@@ -17,18 +17,18 @@ const styles = ScaledSheet.create({
     backgroundColor: '#fff',
     padding: '10@s',
     overflow: 'hidden',
-    borderRadius: 20,
+    borderRadius: '20@s',
   },
   FlatList: {
     direction: 'rtl',
-    marginStart: 10,
+    marginStart: '10@s',
   },
   iconWrapper: Platform.select({
     android: {
       elevation: 10,
       backgroundColor: '#fff',
-      borderRadius: 50,
-      padding: 4,
+      borderRadius: '50@s',
+      padding: '4',
     },
     ios: {
       shadowColor: '#000',
@@ -41,7 +41,7 @@ const styles = ScaledSheet.create({
   greetingTextWrapper: {
     alignItems: 'flex-end',
     paddingHorizontal: '20@s',
-    paddingTop: '10@vs',
+    paddingTop: '10@s',
   },
   greetingText: {
     fontSize: '19@s',
@@ -50,7 +50,7 @@ const styles = ScaledSheet.create({
   topicsTextWrapper: {
     alignItems: 'flex-end',
     paddingHorizontal: '20@s',
-    paddingBottom: '10@vs',
+    paddingBottom: '10@s',
   },
   topicsText: {
     fontSize: '17@s',
@@ -60,40 +60,40 @@ const styles = ScaledSheet.create({
     android: {
       elevation: 2,
       backgroundColor: '#fff',
-      borderRadius: 7,
-      padding: 5,
-      margin: 5,
-      width: 350,
-      height: 313,
-      marginBottom: 20,
-      marginHorizontal: 10,
+      borderRadius: '7@s',
+      padding: '5@s',
+      margin: '5@s',
+      width: '350@s',
+      height: '313@s',
+      marginBottom: '20@s',
+      marginHorizontal: '10@s',
     },
     ios: {
       shadowColor: '#000',
       shadowOpacity: 0.2,
-      shadowRadius: 5,
+      shadowRadius: '5@s',
       shadowOffset: {width: 0, height: 5},
-      padding: 5,
-      margin: 5,
-      width: 350,
-      height: 320,
-      marginHorizontal: 10,
+      padding: '5@s',
+      margin: '5@s',
+      width: '300@s',
+      height: '200@s',
+      marginHorizontal: '10@s',
     },
   }),
   Image: {
-    width: 350,
-    height: 320,
+    width: '300@s',
+    height: '200@s',
     alignSelf: 'center',
-    top: -15,
-    borderRadius: 6,
+    top: '-15@s',
+    borderRadius: '6@s',
   },
 
   TextWrapper: {
     position: 'absolute',
     alignItems: 'flex-start',
     direction: 'rtl',
-    top: 220,
-    left: 10,
+    top: '220@s',
+    left: '10@s',
   },
   MainCategoryText: {
     color: '#fff',
@@ -108,16 +108,6 @@ const styles = ScaledSheet.create({
     paddingHorizontal: '10@s',
     textAlign: 'right',
   },
-  LinearGradient: {
-    borderRadius: 7,
-    padding: 9,
-    alignItems: 'center',
-    width: 350,
-    height: 310,
-    direction: 'rtl',
-    paddingTop: 10,
-    position: 'absolute',
-  },
   TopicsContainer: {
     padding: '5@s',
     marginVertical: '10@vs',
@@ -128,8 +118,8 @@ const styles = ScaledSheet.create({
   TopicsTextWrapper: {
     marginHorizontal: '15@s',
     alignItems: 'flex-end',
-    marginVertical: '10@vs',
-    marginLeft: 95,
+    marginVertical: '10@s',
+    marginLeft: '95@s',
   },
 });
 

@@ -8,6 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {scale} from 'react-native-size-matters';
 import {Card} from '../../Components/Card';
 import axios from 'axios';
 import {Strings} from '../../Ulitis/Strings';
@@ -76,7 +77,7 @@ export const HomeScreen = (props) => {
           data={Banner}
           renderItem={({item}) => {
             return (
-              <View style={{paddingTop: 15}}>
+              <View style={{paddingTop: scale(15)}}>
                 <View style={styles.Card}>
                   <Image
                     source={{uri: item.image}}
@@ -106,25 +107,30 @@ export const HomeScreen = (props) => {
                       flexDirection: 'row',
                       justifyContent: 'flex-end',
                       alignItems: 'center',
-                      marginHorizontal: 5,
+                      marginHorizontal: scale(5),
                     }}>
                     <View style={styles.TopicsTextWrapper}>
                       <Text
                         style={{
-                          fontSize: 17,
-                          marginBottom: 10,
+                          fontSize: scale(15),
+                          marginBottom: scale(10),
                           textAlign: 'right',
                         }}>
                         {item.title}
                       </Text>
-                      <Text style={{color: '#676767', textAlign: 'right'}}>
+                      <Text
+                        style={{
+                          color: '#676767',
+                          textAlign: 'right',
+                          fontSize: scale(12),
+                        }}>
                         {item.description}
                       </Text>
                     </View>
                     <View>
                       <Image
                         source={{uri: item.image}}
-                        style={{width: 100, height: 100}}
+                        style={{width: scale(100), height: scale(100)}}
                         resizeMode="cover"
                       />
                     </View>

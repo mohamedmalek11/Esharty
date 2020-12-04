@@ -37,6 +37,7 @@ export function HomeTabs(props) {
           activeTintColor: Colors.yellow,
           inactiveTintColor: Colors.Dark,
           labelStyle: {fontSize: scale(12)},
+          iconStyle: {fontSize: scale(90)},
           style: {
             margin: scale(15),
             marginTop: scale(10),
