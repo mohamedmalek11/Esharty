@@ -9,67 +9,75 @@ const ImageHight = ImageWidth / 1.8;
 const styles = ScaledSheet.create({
   TitleWrapper: {
     marginHorizontal: '25@s',
-    marginTop: '30@s',
-    marginBottom: '10@s',
+    marginTop: '10@s',
+    marginBottom: '5@s',
   },
 
   Title: {
     textAlign: 'right',
-    fontSize: '23@s',
-  },
-
-  wrapper: {
-    alignItems: 'center',
-    marginBottom: -15,
-  },
-  Image: {
-    width: 414,
-    height: 230,
-  },
-  TextWrapper: {
-    position: 'absolute',
+    fontSize: '20@s',
   },
   MainText: {
     color: '#fff',
     backgroundColor: '#000',
     borderRadius: 7,
     overflow: 'hidden',
-    fontSize: '15@s',
+    fontSize: '13@s',
     paddingHorizontal: '5@s',
-    paddingVertical: 2,
+    paddingVertical: '2@s',
     textAlign: 'right',
-    margin: 5,
-    marginBottom: 13,
+    margin: '5@s',
+    marginBottom: '13@s',
   },
   Details: {
     flexDirection: 'row',
     alignItems: 'center',
+    
   },
   SeconeryText: {
     color: '#fff',
     fontSize: '13@s',
-    paddingLeft: '40@s',
+    paddingLeft: '35@s',
     paddingRight: '0@s',
     textAlign: 'right',
-    margin: 6,
+    margin: '5@s',
   },
   Button: {
     color: '#fff',
-    fontSize: '13@s',
+    fontSize: '12@s',
     textAlign: 'right',
-    margin: 6,
-    borderRadius: 5,
+    margin: '5@s',
+    borderRadius: '5@s',
     borderColor: '#fff',
-    borderWidth: 1,
-    paddingHorizontal: 3,
-    paddingVertical: 3,
+    borderWidth: '1@s',
+    paddingHorizontal: '3@s',
+    paddingVertical: '3@s',
   },
   LinearGradient: {
-    borderRadius: 7,
-    padding: 9,
+    borderRadius: '7@s',
+    zIndex: 2,
+    position: 'absolute',
+    top: '-17@s',
+    left: '32@s',
+    width: '286@s',
+    height: '190@s',
+  },
+  TextWrapper: {
+    position: 'absolute',
     alignItems: 'flex-end',
-    top: 106,
-    left: 33,
+    zIndex: 3,
+    top: '97@s',
+  },
+  Image: {
+    width: '300@s',
+    height: '200@s',
+  },
+  Card: {
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginBottom: '-15@s',
+    
   },
 });
 

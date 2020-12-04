@@ -20,39 +20,37 @@ const Courses = (props) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.wrapper}>
-      <Card>
+    
+      <Card style={styles.Card}>
+        <LinearGradient
+          colors={[
+            'rgba(255,255,255,0.0)',
+            'rgba(0,0,0,0.1)',
+            'rgba(0,0,0,0.2)',
+          ]}
+          style={styles.LinearGradient}
+        />
+
         <Image
           source={require('../../Assets/Images/Courses1.png')}
           style={styles.Image}
         />
-
         <View style={styles.TextWrapper}>
-          <LinearGradient
-            colors={[
-              'rgba(255,255,255,0.0)',
-              'rgba(0,0,0,0.1)',
-              'rgba(0,0,0,0.4)',
-            ]}
-            style={styles.LinearGradient}>
-            <View>
-              <Text style={styles.MainText}>{Courses.Title}</Text>
-            </View>
-            <View style={styles.Details}>
-              <Pressable
-                onPress={() => navigation.navigate('CourseDetailsScreen')}>
-                <Text style={styles.Button}>
-                  {Strings.CoursesDetialsButton}
-                </Text>
-              </Pressable>
+          <View>
+            <Text style={styles.MainText}>{Courses.Title}</Text>
+          </View>
+          <View style={styles.Details}>
+            <Pressable
+              onPress={() => navigation.navigate('CourseDetailsScreen')}>
+              <Text style={styles.Button}>{Strings.CoursesDetialsButton}</Text>
+            </Pressable>
 
-              <Text style={styles.SeconeryText}>{Courses.Cost}</Text>
-              <Text style={styles.SeconeryText}>{Courses.Courses}</Text>
-            </View>
-          </LinearGradient>
+            <Text style={styles.SeconeryText}>{Courses.Cost}</Text>
+            <Text style={styles.SeconeryText}>{Courses.Courses}</Text>
+          </View>
         </View>
       </Card>
-    </View>
+    
   );
 };
 
