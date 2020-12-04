@@ -17,7 +17,7 @@ const styles = ScaledSheet.create({
     backgroundColor: '#fff',
     padding: '10@s',
     overflow: 'hidden',
-    borderRadius: '20@s',
+    borderRadius: '18@s',
   },
   FlatList: {
     direction: 'rtl',
