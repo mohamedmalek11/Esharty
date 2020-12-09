@@ -1,8 +1,16 @@
 import React from 'react';
-import {View, Text, FlatList, Image, SafeAreaView} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import Video from 'react-native-video';
 import {Strings, placeholder} from '../../Ulitis/Strings';
 import {AppButton} from '../../Components/AppButton';
+import {scale} from 'react-native-size-matters';
 import {useNavigation} from '@react-navigation/native';
 import {Colors} from '../../Ulitis/Colors';
 import {Card} from '../../Components/Card';
@@ -19,18 +27,18 @@ const LessonCard = (props) => {
         direction: 'rtl',
         backgroundColor: '#fff',
         borderRadius: 5,
-        marginHorizontal: 10,
-        height: 60,
+        marginHorizontal: scale(10),
+        height: scale(55),
         alignItems: 'center',
-        marginVertical: 5,
+        marginVertical: scale(5),
         justifyContent: 'space-between',
       }}>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Image
           source={require('../../Assets/Images/Lesson.png')}
-          style={{width: 50, height: 50}}
+          style={{width: scale(50), height: scale(50)}}
         />
-        <Text style={{fontSize: 15, marginHorizontal: 10}}>
+        <Text style={{fontSize: scale(15), marginHorizontal: scale(10)}}>
           {LessonCard.Title}
         </Text>
       </View>
@@ -40,12 +48,12 @@ const LessonCard = (props) => {
             name={'checkmark-outline'}
             style={{
               color: '#fff',
-              fontSize: 19,
-              padding: 1,
+              fontSize: scale(19),
+              padding: scale(1),
               backgroundColor: '#32a44d',
-              borderRadius: 11,
+              borderRadius: scale(11),
               overflow: 'hidden',
-              marginRight: 5,
+              marginRight: scale(5),
               fontWeight: 'bold',
             }}
           />
@@ -54,16 +62,16 @@ const LessonCard = (props) => {
           name={'play'}
           style={{
             color: Colors.yellow,
-            fontSize: 20,
-            padding: 4,
+            fontSize: scale(15),
+            padding: scale(4),
             borderColor: Colors.yellow,
-            borderWidth: 1,
-            borderRadius: 16,
+            borderWidth: scale(1),
+            borderRadius: scale(13),
             overflow: 'hidden',
-            marginRight: 10,
+            marginRight: scale(10),
             fontWeight: 'bold',
-            paddingRight: 6,
-            marginLeft: 10,
+            paddingRight: scale(6),
+            marginLeft: scale(10),
           }}
         />
       </View>
@@ -81,52 +89,60 @@ export const CourseWatchScreen = () => {
     <SafeAreaView>
       <Icon
         name={'chevron-forward-outline'}
-        style={{fontSize: 30, textAlign: 'right', marginHorizontal: 10}}
+        style={{
+          fontSize: scale(30),
+          textAlign: 'right',
+          marginHorizontal: scale(10),
+        }}
         onPress={() => navigation.goBack()}
       />
-      <Text
-        style={{
-          textAlign: 'right',
-          fontSize: 23,
-          marginHorizontal: 20,
-          marginVertical: 5,
-        }}>
-        {Strings.FirstLesson}
-      </Text>
-      <View style={{paddingHorizontal: 20}}>
-        <View style={styles.VideoWrapper}>
-          <Video
-            source={require('../../Assets/Images/SignVideo.mp4')}
-            controls={true}
-            style={styles.backgroundVideo}
-            paused={true}
-          />
-        </View>
-        <View style={styles.Details}>
-          <AppButton
-            title={placeholder.FinishًWatchButton}
-            titleStyle={{fontSize: 12}}
-            WrapperStyle={{marginHorizontal: 10}}
-          />
-          <View style={{alignItems: 'center', marginHorizontal: 10}}>
-            <Text>{Strings.VideoLenth}</Text>
-            <Text>{Strings.VideoLenthTime}</Text>
-          </View>
-        </View>
+      <ScrollView>
         <Text
           style={{
             textAlign: 'right',
-            marginTop: 25,
-            fontSize: 17,
+            fontSize: scale(21),
+            marginHorizontal: scale(20),
+            marginVertical: scale(0),
           }}>
-          {Strings.CourseListTitle}
+          {Strings.FirstLesson}
         </Text>
-        <FlatList
-          data={DummyLessonCard}
-          renderItem={RenderItem}
-          style={{paddingVertical: 10}}
-        />
-      </View>
+        <View style={{paddingHorizontal: scale(10)}}>
+          <View style={styles.VideoWrapper}>
+            <Video
+              source={require('../../Assets/Images/SignVideo.mp4')}
+              controls={true}
+              style={styles.backgroundVideo}
+              paused={true}
+            />
+          </View>
+          <View style={styles.Details}>
+            <AppButton
+              title={placeholder.FinishًWatchButton}
+              titleStyle={{fontSize: scale(12)}}
+              WrapperStyle={{marginHorizontal: scale(10)}}
+            />
+            <View style={{alignItems: 'center', marginHorizontal: scale(10)}}>
+              <Text style={{fontSize: scale(12)}}>{Strings.VideoLenth}</Text>
+              <Text style={{fontSize: scale(12)}}>
+                {Strings.VideoLenthTime}
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={{
+              textAlign: 'right',
+              marginTop: scale(15),
+              fontSize: scale(15),
+            }}>
+            {Strings.CourseListTitle}
+          </Text>
+          <FlatList
+            data={DummyLessonCard}
+            renderItem={RenderItem}
+            style={{paddingVertical: scale(5), marginBottom: scale(25)}}
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

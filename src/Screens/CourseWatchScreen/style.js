@@ -3,11 +3,11 @@ import {Colors} from '../../Ulitis/Colors';
 
 const styles = ScaledSheet.create({
   backgroundVideo: {
-    width: 375,
-    height: 250,
+    width: '320@s',
+    height: '180@s',
     borderRadius: 7,
     position: 'relative',
-    marginTop: 20,
+    marginTop: '10@s',
   },
   VideoWrapper: {
     alignItems: 'center',
@@ -15,9 +15,8 @@ const styles = ScaledSheet.create({
   Details: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop:15,
+    marginTop: '5@s',
     direction: 'rtl',
-  
   },
 });
 
